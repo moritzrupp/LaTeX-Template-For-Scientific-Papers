@@ -15,4 +15,6 @@
 *.nls
 *.fls
 *.ind
+*.tdo
 *.fdb_latexmk
+.DS_Store
