@@ -1,37 +1,36 @@
 
-#Willkommen zum ReadMe der LaTeX-Vorlage für wissenschaftliche Arbeiten.
-*Version 1.2 vom 21.05.2013*
+#LaTeX Template For Scientific Papers
+*Version 1.0, 01.06.2013*
 
-*Vorab: Diese Vorlage basiert auf einer Vorlage von [Stefan Macke](http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/). Vielen Dank für die großartige Arbeit!*
+**Eine Englische Version der Vorlage wird folgen. / An English version of the template will follow.**
+
+---
+
+*Diese Vorlage basiert auf einer Vorlage von [Stefan Macke](http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/), erstmalig erweitert von Felix Rupp. Vielen Dank für grandiose Arbeit!*
+
+Diese Version der LaTeX-Vorlage für wissenschaftliche Arbeiten basiert auf einer erweiterten Version (1.2) von [Felix Rupp](https://github.com/felixrupp/LaTeX-Vorlage-Wissenschaftliche-Arbeit) vom 21.05.2013. Es wurden folgende Features von ihm hinzugefügt:
+
+* Umstellung auf UTF-8
+* Anpassung an die Vorgaben des Referenten (u.a. Verzeichnisse ans Ende)
+* Möglichkeit zum parsen des Glossars mit Hilfe des Skripts `makemyindex`
+* Anpassungen der `natdin.bst`
+* Hinzufügen einer InDesign/PDF Vorlage zum selbst falten einer CD-Hülle
+* Definition verschiedener Befehle zum Zitieren mit dem Paket `nomenclature`
 
 
-Da ich selbst im Sommer 2011 auch eine wissenschaftliche Arbeit in Form einer Bachelor-Thesis zu verfassen hatte, erweiterte ich die Vorlage von Stefan um eigene weitere Funktionalitäten. 
+Die vorliegende Version der Vorlage wurde dahingehend verändert, dass Glossar und Abkürzungsverzeichnis nicht mehr gemeinsam mit dem Paket `nomenclature`, sondern das Glossar mit dem Paket `glossaries` und das Abkürzungsverzeichnis mit dem Paket `acronym` verwaltet werden. Daher wurden die Befehle von Felix entfernt, sowie das Skript `makemyindex`.
 
-
-Eines dieser Features war die Umstellung auf UTF-8. Windows-Benutzer könnten deshalb – je nach eingesetzten Tools – Probleme mit der Textcodierung feststellen. Des Weiteren galt es Die Vorlage an die Vorgaben meines Referenten anzupassen. Dies umfasste unter anderem die Verlagerung der Verzeichnisse ans Ende der Arbeit sowie kleinere optische Korrekturen in den Kopfzeilen der Seiten.
-
-
-Für Mac OS X Nutzer musste ich zudem eine Lösung finden um mein Glossar und ggf. einen Index zu parsen. Da ich in meinem Editor keine Preprozessor-Anweisungen hinterlegen konnte habe ich ein einfaches Bash-Shell-Skript „makemyindex“ geschrieben um die nötigen Dateien zu erzeugen.
-
-
-Im Resourcen-Ordner findet sich, neben dem floatflt-Paket, zusätzlich eine InDesign/PDF Vorlage zum selbst falten einer CD-Hülle, die man dann auf der letzten Seite der Arbeit einfach einkleben kann. Das sieht deutlich schöner aus, als die käuflich zu erwerbenden Papier-Hüllen mit Plastik-Fenster.
-
+Da ich an der [Dualen Hochschule Baden-Württemberg Stuttgart](http://www.dhbw-stuttgart.de) studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Der Bibliographie-Stil wurde von `natdin` auf `agsm` nach dem Harvard-Stil geändert.
 
 
 ##Hinweise:
 
-Die mitgelieferte „natdin.bst“-Datei wurde an einigen wenigen Stellen angepasst, um unerwünschte Kommata in Autoren Aufzählungen in Zitaten zu vermeiden. Im Resourcen-Ordner befindet sich die unveränderte Originaldatei.
-
-
-Beschäftige dich besonders mit den Befehlen in der „Befehle.tex“ Datei. Dort gibt es einige komplexe Helferlein, die dir beim Erzeugen von Glossar-Einträgen und Zitaten im Fließtext behilflich sein können.
-
 
 Nutze die Bibliographie-Verwaltung! 
 
+Die ursprünglichen Vorlagen von Stefan und Felix (in Version 1.2 vom vom 21.05.2013) liegen im Ordner Resourcen als ZIP-Dateien bei.
 
-Die ursprüngliche Vorlage von Stefan liegt im Ordner Resourcen als ZIP-Datei bei.
-
-
+---
 
 ##Lizenz:
 

@@ -1,5 +1,5 @@
 % !TEX encoding = UTF-8 Unicode
-% !TEX root =  Bachelorarbeit.tex
+% !TEX root =  Arbeit.tex
 
 % Anpassung des Seitenlayouts ---------------------------------------------------
 %   siehe Seitenstil.tex
@@ -18,7 +18,7 @@
 % Umlaute ------------------------------------------------------------------------------
 %   Umlaute/Sonderzeichen wie äüöß direkt im Quelltext verwenden (CodePage).
 %   Erlaubt automatische Trennung von Worten mit Umlauten.
-%   Für Umlaute siehe Hauptdokument Zeile 35
+%   Für Umlaute siehe Hauptdokument Zeile 41
 % -----------------------------------------------------------------------------------------
 \usepackage{textcomp} % Euro-Zeichen etc.
 
@@ -37,6 +37,7 @@
 \usepackage[dvips,final]{graphicx}
 % hier liegen die Bilder des Dokuments
 \graphicspath{{Bilder/}}
+\usepackage{picture}
 
 
 % Befehle aus AMSTeX für mathematische Symbole z.B. \boldsymbol \mathbb
@@ -72,13 +73,23 @@
 %               - \FachbegriffSpezialB
 %    erzeugt oder separat in die Datei "Glossar.tex" eingetragen.
 % -------------------------------------------------------------------------------------------
-\usepackage[intoc]{nomencl}
-\let\abbrev\nomenclature
-\renewcommand{\nomname}{Abkürzungsverzeichnis und Glossar}
-\setlength{\nomlabelwidth}{.25\hsize}
-\renewcommand{\nomlabel}[1]{#1 \dotfill}
-\setlength{\nomitemsep}{-\parsep}
+%\usepackage[intoc]{nomencl}
+%\let\abbrev\nomenclature
+%\renewcommand{\nomname}{Abkürzungsverzeichnis und Glossar}
+%\setlength{\nomlabelwidth}{.25\hsize}
+%\renewcommand{\nomlabel}[1]{#1 \dotfill}
+%\setlength{\nomitemsep}{-\parsep}
+\usepackage[
+	printonlyused,
+	footnote
+]{acronym}
 
+\usepackage[
+	nonumberlist, %keine Seitenzahlen anzeigen
+	%acronym,      %ein Abkürzungsverzeichnis erstellen
+	%section,     %im Inhaltsverzeichnis auf section-Ebene erscheinen
+	toc,          %Einträge im Inhaltsverzeichnis
+]{glossaries}
 
 % zum Umfließen von Bildern ---------------------------------------------------------
 \usepackage[vflt]{floatflt}
@@ -184,7 +195,7 @@
 
 
 % natbib einbinden -----------------------------------------------------------------------
-\usepackage[square,numbers,sort&compress]{natbib}
+\usepackage[round, numbers, sort, authoryear]{natbib}
 
 
 % PDF-Optionen -------------------------------------------------------------------------
@@ -261,7 +272,7 @@
 
 
 % definiert u.a. die Befehle \todo und \listoftodos --------------------------------
-\usepackage{todonotes}
+\usepackage[ngerman]{todonotes}
 
 
 % sorgt dafür, dass Leerzeichen hinter parameterlosen Makros nicht als Makroendezeichen interpretiert werden

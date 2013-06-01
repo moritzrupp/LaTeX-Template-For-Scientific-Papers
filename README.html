@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <style>
 h1,
 h2,
@@ -19,9 +19,22 @@ body {
     font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
     font-size: 13px;
     line-height: 18px;
-    color: #000;
+    color: #737373;
+    background-color: white;
     margin: 10px 13px 10px 13px;
 }
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
 a {
     color: #0069d6;
 }
@@ -41,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #000;
+    color: #404040;
     line-height: 36px;
 }
 h1 {
@@ -79,7 +92,7 @@ blockquote:before {
     font-size:40px;
     margin-left:-10px;
     font-family:georgia,serif;
-    color:#000;
+    color:#eee;
 }
 blockquote p {
     font-size: 14px;
@@ -93,7 +106,7 @@ code, pre {
 }
 code {
     background-color: #fee9cc;
-    color: #000;
+    color: rgba(0, 0, 0, 0.75);
     padding: 1px 3px;
     font-size: 12px;
     -webkit-border-radius: 3px;
@@ -112,44 +125,62 @@ pre {
 }
 pre code {
     background-color: #fff;
-    color:#000;
+    color:#737373;
     font-size: 11px;
     padding: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 914px) {
     body {
-        width: 748px;
+        width: 854px;
         margin:10px auto;
     }
 }
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
 </style>
-<title>Willkommen zum ReadMe der LaTeX-Vorlage für wissenschaftliche Arbeiten.</title>
+<title>LaTeX Template For Scientific Papers</title>
 
 </head>
 <body>
-<h1>Willkommen zum ReadMe der LaTeX-Vorlage für wissenschaftliche Arbeiten.</h1>
+<h1>LaTeX Template For Scientific Papers</h1>
 
-<p><em>Version 1.2 vom 21.05.2013</em></p>
+<p><em>Version 1.0, 01.06.2013</em></p>
 
-<p><em>Vorab: Diese Vorlage basiert auf einer Vorlage von <a href="http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/">Stefan Macke</a>. Vielen Dank für die großartige Arbeit!</em></p>
+<p><strong>Eine Englische Version der Vorlage wird folgen. / An English version of the template will follow.</strong></p>
 
-<p>Da ich selbst im Sommer 2011 auch eine wissenschaftliche Arbeit in Form einer Bachelor-Thesis zu verfassen hatte, erweiterte ich die Vorlage von Stefan um eigene weitere Funktionalitäten.</p>
+<hr />
 
-<p>Eines dieser Features war die Umstellung auf UTF-8. Windows-Benutzer könnten deshalb – je nach eingesetzten Tools – Probleme mit der Textcodierung feststellen. Des Weiteren galt es Die Vorlage an die Vorgaben meines Referenten anzupassen. Dies umfasste unter anderem die Verlagerung der Verzeichnisse ans Ende der Arbeit sowie kleinere optische Korrekturen in den Kopfzeilen der Seiten.</p>
+<p><em>Diese Vorlage basiert auf einer Vorlage von <a href="http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/">Stefan Macke</a>, erstmalig erweitert von Felix Rupp. Vielen Dank für grandiose Arbeit!</em></p>
 
-<p>Für Mac OS X Nutzer musste ich zudem eine Lösung finden um mein Glossar und ggf. einen Index zu parsen. Da ich in meinem Editor keine Preprozessor-Anweisungen hinterlegen konnte habe ich ein einfaches Bash-Shell-Skript „makemyindex“ geschrieben um die nötigen Dateien zu erzeugen.</p>
+<p>Diese Version der LaTeX-Vorlage für wissenschaftliche Arbeiten basiert auf einer erweiterten Version (1.2) von <a href="https://github.com/felixrupp/LaTeX-Vorlage-Wissenschaftliche-Arbeit">Felix Rupp</a> vom 21.05.2013. Es wurden folgende Features von ihm hinzugefügt:</p>
 
-<p>Im Resourcen-Ordner findet sich, neben dem floatflt-Paket, zusätzlich eine InDesign/PDF Vorlage zum selbst falten einer CD-Hülle, die man dann auf der letzten Seite der Arbeit einfach einkleben kann. Das sieht deutlich schöner aus, als die käuflich zu erwerbenden Papier-Hüllen mit Plastik-Fenster.</p>
+<ul>
+<li>Umstellung auf UTF-8</li>
+<li>Anpassung an die Vorgaben des Referenten (u.a. Verzeichnisse ans Ende)</li>
+<li>Möglichkeit zum parsen des Glossars mit Hilfe des Skripts <code>makemyindex</code></li>
+<li>Anpassungen der <code>natdin.bst</code></li>
+<li>Hinzufügen einer InDesign/PDF Vorlage zum selbst falten einer CD-Hülle</li>
+<li>Definition verschiedener Befehle zum Zitieren mit dem Paket <code>nomenclature</code></li>
+</ul>
+
+
+<p>Die vorliegende Version der Vorlage wurde dahingehend verändert, dass Glossar und Abkürzungsverzeichnis nicht mehr gemeinsam mit dem Paket <code>nomenclature</code>, sondern das Glossar mit dem Paket <code>glossaries</code> und das Abkürzungsverzeichnis mit dem Paket <code>acronym</code> verwaltet werden. Daher wurden die Befehle von Felix entfernt, sowie das Skript <code>makemyindex</code>.</p>
+
+<p>Da ich an der <a href="http://www.dhbw-stuttgart.de">Dualen Hochschule Baden-Württemberg Stuttgart</a> studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Der Bibliographie-Stil wurde von <code>natdin</code> auf <code>agsm</code> nach dem Harvard-Stil geändert.</p>
 
 <h2>Hinweise:</h2>
 
-<p>Die mitgelieferte „natdin.bst“-Datei wurde an einigen wenigen Stellen angepasst, um unerwünschte Kommata in Autoren Aufzählungen in Zitaten zu vermeiden. Im Resourcen-Ordner befindet sich die unveränderte Originaldatei.</p>
-
-<p>Beschäftige dich besonders mit den Befehlen in der „Befehle.tex“ Datei. Dort gibt es einige komplexe Helferlein, die dir beim Erzeugen von Glossar-Einträgen und Zitaten im Fließtext behilflich sein können.</p>
-
 <p>Nutze die Bibliographie-Verwaltung!</p>
 
-<p>Die ursprüngliche Vorlage von Stefan liegt im Ordner Resourcen als ZIP-Datei bei.</p>
+<p>Die ursprünglichen Vorlagen von Stefan und Felix (in Version 1.2 vom vom 21.05.2013) liegen im Ordner Resourcen als ZIP-Dateien bei.</p>
+
+<hr />
 
 <h2>Lizenz:</h2>
 
