@@ -1,4 +1,4 @@
-DOCUMENT_NAME = Arbeit
+DOCUMENT_NAME = Paper
 
 # Build the LaTeX document.
 all: outputdir report cleanup
