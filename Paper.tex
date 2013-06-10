@@ -63,15 +63,15 @@
 
 
 % Kopf- und Fußzeilen, Seitenränder etc. ---------------------------------------------------------------
-\input{Seitenstil}
+\input{Layout}
 
 
 % eigene Definitionen für Silbentrennung ---------------------------------------------------------------
-\include{Silbentrennung}
+\include{Hyphenation}
 
 
 % eigene LaTeX-Befehle ---------------------------------------------------------------------------------
-\include{Befehle}
+\include{Commands}
 
 
 % Das eigentliche Dokument -----------------------------------------------------------------------------
@@ -89,16 +89,16 @@
 
 % Deckblatt und Abstract ohne Seitenzahl ---------------------------------------------------------------
 \ofoot{}
-\include{Deckblatt}
+\include{Titlepage}
 
 % Sperrvermerk ----------------------------------------------------------------------------
 \include{Sperrvermerk}
 
 % Selbständigkeitserklärung ----------------------------------------------------------------------------
-\include{Erklaerung}
+\include{Declaration}
 
 %  Abstract ------------------------------------------------------------------------------------------
-\include{Inhalt/Abstract}
+\include{Content/Abstract}
 
 % Liste mit Todos -------------------------------------------------------------------------------------
 \phantomsection
@@ -122,14 +122,14 @@
 
 
 % Abkürzungsverzeichnis --------------------------------------------------------------------------------
-\include{Inhalt/Abkuerzungsverzeichnis}
+\include{Content/Abbreviations}
 
 % Glossar ---------------------------------------------------------------------------------------------
 
 \makeglossaries
-\include{Inhalt/Glossar}
+\include{Content/Glossary}
 \printglossary[style=altlist, title=Glossar]
-\label{cha:Glossar}
+\label{cha:Glossary}
 
 
 % Restliche Verzeichnisse ------------------------------------------------------------------------------
@@ -144,7 +144,7 @@
 
 
 % die Inhaltskapitel werden in "Inhalt.tex" inkludiert -------------------------------------------------
-\input{Inhalt}
+\input{Content}
 
 
 \clearpage{}
@@ -156,7 +156,7 @@
 %   Das Literaturverzeichnis wird aus der BibTeX-Datenbank "Bibliographie.bib"
 %   erstellt.
 % ------------------------------------------------------------------------------------------------------
-\bibliography{Bibliographie} % Aufruf: bibtex Masterarbeit
+\bibliography{Bibliography} % Aufruf: bibtex Masterarbeit
 \bibliographystyle{agsm} % Harvard-Stil des Literaturverzeichnisses
 
 
@@ -173,11 +173,11 @@
 \begin{appendix}
     \clearpage{}
     \pagenumbering{roman}
-    \chapter{Anhang}
-    \label{sec:Anhang}
+    \chapter{Appendix}
+    \label{sec:Appendix}
     % Rand der Aufzählungen in Tabellen anpassen
     \setdefaultleftmargin{1em}{}{}{}{}{}
-    \input{Anhang}
+    \input{Appendix}
 \end{appendix}
 
 \end{document}
