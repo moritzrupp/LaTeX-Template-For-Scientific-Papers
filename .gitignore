@@ -16,3 +16,7 @@
 *.fls
 *.ind
 *.fdb_latexmk
+*.glo
+*.ist
+*.tdo
+.DS_Store
