@@ -29,7 +29,7 @@ Nutze die Bibliographie-Verwaltung!
 
 Die ursprünglichen Vorlagen von Stefan und Felix (in Version 1.2 vom 21.05.2013) liegen im Ordner `Resourcen` als ZIP-Dateien bei.
 
-Bei Frage kannst du dich gerne an mich wenden:[moritz.rupp@gmail.com](mailto:morit.zrupp@gmail.com)
+Bei Frage kannst du dich gerne an mich wenden: [moritz.rupp@gmail.com](mailto:morit.zrupp@gmail.com)
 
 ---
 ##English version
@@ -54,6 +54,8 @@ Because I'm studying at the [Baden-Wuerttemberg Cooperative State University Stu
 Use the bibliography management with great benefits!
 
 The original templates of Stefan and Felix (in version 1.2 from the 21/05/2013) can be found in the `Resources` folder.
+
+In case of questions don't hesitate to send me an email: [moritz.rupp@gmail.com](mailto:moritz.rupp@gmail.com)
 
 ---
 
