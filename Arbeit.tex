@@ -6,7 +6,7 @@
 %	ursprünglich erstellt von Stefan Macke, 24.04.2009
 %	http://blog.stefan-macke.de
 %
-%	erweitert von Felix Rupp
+%	erweitert von Felix Rupp, 21.05.2013
 %	http://www.felixrupp.com/
 %
 %
@@ -72,6 +72,14 @@
 
 % eigene LaTeX-Befehle ---------------------------------------------------------------------------------
 \include{Befehle}
+
+
+% Literaturverzeichnis ---------------------------------------------------------------------------------
+%   Das Literaturverzeichnis wird aus der BibTeX-Datenbank "Bibliographie.bib"
+%   erstellt.
+% ------------------------------------------------------------------------------------------------------
+\bibliography{Bibliographie} % Aufruf: biblatex Bibliographie
+\defbibheading{literaturverzeichnis}{\chapter*{\bibliographyheading}}
 
 
 % Das eigentliche Dokument -----------------------------------------------------------------------------
@@ -152,12 +160,10 @@
 \setcounter{page}{7} %%% Dieser Pagecounter muss entsprechend der verbrauchten Seiten im Inhaltsverzeichnis angepasst werden. Endet das IHV bei Seite III, so muss hier 4 eingetragen werden
 
 
-% Literaturverzeichnis ---------------------------------------------------------------------------------
-%   Das Literaturverzeichnis wird aus der BibTeX-Datenbank "Bibliographie.bib"
-%   erstellt.
-% ------------------------------------------------------------------------------------------------------
-\bibliography{Bibliographie} % Aufruf: bibtex Masterarbeit
-\bibliographystyle{agsm} % Harvard-Stil des Literaturverzeichnisses
+% Literaturverzeichnis anzeigen
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibliographyheading}
+\printbibliography[heading=literaturverzeichnis]
 
 
 % Index ------------------------------------------------------------------------------------------------

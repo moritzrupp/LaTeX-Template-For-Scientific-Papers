@@ -13,6 +13,7 @@
 
 % Anpassung an Landessprache -------------------------------------------------
 \usepackage[ngerman]{babel}
+\usepackage[babel,german=quotes]{csquotes}
 
 
 % Umlaute ------------------------------------------------------------------------------
@@ -194,9 +195,8 @@
 \usepackage{url}
 
 
-% natbib einbinden -----------------------------------------------------------------------
-\usepackage[round, numbers, sort, authoryear]{natbib}
-
+% biblatex einbinden -----------------------------------------------------------------------
+\usepackage[style=authoryear-ibid, hyperref=true]{biblatex}
 
 % PDF-Optionen -------------------------------------------------------------------------
 \usepackage[
@@ -220,7 +220,7 @@
     %menucolor=black, % Acrobat-Menüpunkte
     %urlcolor=black, 
 %
-    backref,
+    %backref,
     plainpages=false, % zur korrekten Erstellung der Bookmarks
     pdfpagelabels, % zur korrekten Erstellung der Bookmarks
     hypertexnames=false, % zur korrekten Erstellung der Bookmarks
