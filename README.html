@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <style>
 h1,
 h2,
@@ -150,11 +150,41 @@ pre code {
 <body>
 <h1>LaTeX Template For Scientific Papers</h1>
 
-<p><em>Version 1.0, 01.06.2013</em></p>
+<p><em>Version 1.0.1, 30.06.2013</em></p>
 
-<p><strong>Eine Englische Version der Vorlage wird folgen. / An English version of the template will follow.</strong></p>
+<p><strong>German version follows.</strong></p>
 
 <hr />
+
+<p><em>This template is based on a version by <a href="http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/">Stefan Macke</a>, for the first time expanded by Felix Rupp. Thank you a lot for this magnificent work!</em></p>
+
+<p>This version of the LaTeX template for scientific papers is based on an expanded version (1.2) by Felix Rupp from the 21/05/2013. He added the following features:</p>
+
+<ul>
+<li>switch to UTF-8</li>
+<li>customisation to comply with the requirements of the referee</li>
+<li>possibility for a glossary with the aid of the script <code>makemyindex</code></li>
+<li>customisation of the <code>natdin.bst</code></li>
+<li>additional template for a self-bended jewel case (InDesign and PDF)</li>
+<li>definition of custom commands for citation with the package <code>nomenclature</code></li>
+</ul>
+
+
+<p>In this template the glossary and list of abbreviations aren't done with the package <code>nomenclature</code> anymore. Instead the package <code>glossaries</code> is used for the glossary and the package <code>acronym</code> is used for the list of abbrevations. Now they can be used seperately. Therefore the custom commands by Felix and the script <code>makemyindex</code> are removed.</p>
+
+<p>Because I'm studying at the <a href="http://www.dhbw-stuttgart.de/service/english/about-us.html">Baden-Wuerttemberg Cooperative State University Stuttgart</a> and the students have to write a thesis every practical term, the template fits the requirements of the uni. The listings are moved to the front again and the titlepage is customised. For the bibliography the package <code>biblatex</code> is now used. The bibliography style is <code>authoryear</code>. You can easily define the heading of the bibliography in the meta definitions.</p>
+
+<h3>Notes</h3>
+
+<p>Use the bibliography management with great benefits!</p>
+
+<p>The original templates of Stefan and Felix (in version 1.2 from the 21/05/2013) can be found in the <code>Resources</code> folder.</p>
+
+<p>In case of questions don't hesitate to send me an email: <a href="mailto:moritz.rupp@gmail.com">moritz.rupp@gmail.com</a></p>
+
+<hr />
+
+<h2>German version</h2>
 
 <p><em>Diese Vorlage basiert auf einer Vorlage von <a href="http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/">Stefan Macke</a>, erstmalig erweitert von Felix Rupp. Vielen Dank für grandiose Arbeit!</em></p>
 
@@ -172,20 +202,22 @@ pre code {
 
 <p>Die vorliegende Version der Vorlage wurde dahingehend verändert, dass Glossar und Abkürzungsverzeichnis nicht mehr gemeinsam mit dem Paket <code>nomenclature</code>, sondern das Glossar mit dem Paket <code>glossaries</code> und das Abkürzungsverzeichnis mit dem Paket <code>acronym</code> verwaltet werden. Daher wurden die Befehle von Felix entfernt, sowie das Skript <code>makemyindex</code>.</p>
 
-<p>Da ich an der <a href="http://www.dhbw-stuttgart.de">Dualen Hochschule Baden-Württemberg Stuttgart</a> studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Der Bibliographie-Stil wurde von <code>natdin</code> auf <code>agsm</code> nach dem Harvard-Stil geändert.</p>
+<p>Da ich an der <a href="http://www.dhbw-stuttgart.de">Dualen Hochschule Baden-Württemberg Stuttgart</a> studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Anstatt <code>bibtex</code>wird <code>biblatex</code>zur Erzeugung des Bibliographiverzeichnises verwendet. Als Bibliographie-Stil wird der Stil <code>authoryear</code> verwendet. In den Metadefinitionen kann die Überschrift des Bibliographiverzeichnisses festgelegt werden.</p>
 
-<h2>Hinweise:</h2>
+<h3>Hinweise:</h3>
 
 <p>Nutze die Bibliographie-Verwaltung!</p>
 
-<p>Die ursprünglichen Vorlagen von Stefan und Felix (in Version 1.2 vom vom 21.05.2013) liegen im Ordner Resourcen als ZIP-Dateien bei.</p>
+<p>Die ursprünglichen Vorlagen von Stefan und Felix (in Version 1.2 vom 21.05.2013) liegen im Ordner <code>Resourcen</code> als ZIP-Dateien bei.</p>
+
+<p>Bei Frage kannst du dich gerne an mich wenden: <a href="mailto:morit.zrupp@gmail.com">moritz.rupp@gmail.com</a></p>
 
 <hr />
 
-<h2>Lizenz:</h2>
+<h3>Licence:</h3>
 
 <p><a href="http://creativecommons.org/licenses/by-sa/3.0/de/"><img src="http://i.creativecommons.org/l/by-sa/3.0/de/88x31.png" alt="Creative Commons Lizenzvertrag" /></a></p>
 
-<p>Dieses Werk bzw. Inhalt steht unter einer <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">Creative Commons Namensnennung-Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz</a>.</p>
+<p>This work respectively the content is plubicised under the <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">Creative Commons Namensnennung-Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz</a> (<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported</a>).</p>
 </body>
 </html>

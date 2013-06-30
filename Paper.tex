@@ -1,130 +1,134 @@
 % !TEX encoding = UTF-8 Unicode
 
 % ------------------------------------------------------------------------------------------------------
-%	Formatvorlage für wissenschaftliche Arbeiten (Diplomarbeit, Bachelorarbeit, Masterarbeit, Seminararbeit, Projektarbeit, Dokumentation)
+% Style template for scientific papers (such as bachelor or master thesis, seminar papers, documentations)
 % ------------------------------------------------------------------------------------------------------
-%	ursprünglich erstellt von Stefan Macke, 24.04.2009
+%	originally created by Stefan Macke, 24/04/2009
 %	http://blog.stefan-macke.de
 %
-%	erweitert von Felix Rupp
+%	for the first time expanded  by Felix Rupp, 21/05/2009
 %	http://www.felixrupp.com/
 %
 %
 %
-% erweitert und angepasst von Moritz Rupp
+% expaneded und customised by Moritz Rupp
 % moritz.rupp@gmail.com
 %
-% Version 1.0
-% Datum: 01.06.2013
+% Version 1.0.1
+% Date: 30/06/2013
 
 
-% Dokumentenkopf ---------------------------------------------------------------------------------------
-%   Diese Vorlage basiert auf "scrreprt" aus dem koma-script.
+% Document head ---------------------------------------------------------------------------------------
+% This template is based on 'scrreprt' of the koma-script.
 % ------------------------------------------------------------------------------------------------------
 \documentclass[
-    12pt, % Schriftgröße
-    DIV10, % Änderung der Größe des Satzspiegels (bedruckbarer Bereich einer Seite), nur in Verbindung mit koma-script verwendbar
-    UKenglish, % für Umlaute, Silbentrennung etc.
-    a4paper, % Papierformat
-    oneside, % einseitiges Dokument
-    titlepage, % es wird eine Titelseite verwendet
-    parskip=half, % Abstand zwischen Absätzen (halbe Zeile)
-    headings=normal, % Größe der Überschriften verkleinern
-    listof=totoc, % Verzeichnisse im Inhaltsverzeichnis aufführen
-    bibliography=totoc, % Literaturverzeichnis im Inhaltsverzeichnis aufführen
-    index=totoc, % Index im Inhaltsverzeichnis aufführen
-    captions=tableheading, % Beschriftung von Tabellen unterhalb ausgeben
-    final % Status des Dokuments (final/draft)
+    12pt, % font-size
+    DIV10, % Change of the size of the print space, only to be used with koma-script
+    UKenglish, % langauge
+    a4paper, % paper size
+    oneside, % one or twoside
+    titlepage, % titlepage is used
+    parskip=half, % Space between paragrpahs (half of a line)
+    headings=normal, % Reduce size of headings
+    listof=totoc, % list the listings in the table of contents
+    bibliography=totoc, % list the bibliography in the table of contents
+    index=totoc, % list the index in the table of contents
+    captions=tableheading, % captions of tables etc. below
+    final % status of the document (final/draft)
 ]{scrreprt}
 
-% UTF8 und T1 Fontencoding -----------------------------------------------------------------------------
+% UTF8 and T1 Fontencoding -----------------------------------------------------------------------------
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 
-% Meta-Informationen -----------------------------------------------------------------------------------
-%   Informationen über das Dokument, wie z.B. Titel, Autor, Matrikelnr. etc
-%   werden in der Datei Meta.tex definiert und können danach global
-%   verwendet werden.
+% Meta information -----------------------------------------------------------------------------------
+% Information about the document, such as title, author, student id, etc
+% are defined in the file Meta.tex. They can be used globally.
 % ------------------------------------------------------------------------------------------------------
 \input{Meta}
 
 
-% benötigte Packages -----------------------------------------------------------------------------------
-%   LaTeX-Packages, die benötigt werden, sind in die Datei Packages.tex
-%   "ausgelagert", um diese Vorlage möglichst übersichtlich zu halten.
+% necessary packages -----------------------------------------------------------------------------------
+% Necessary LaTeX packages  are included in the external file Packages.tex
+% to keep the tepmlate clean.
 % ------------------------------------------------------------------------------------------------------
 \input{Packages}
 
 
-% Erstellung eines Index und Abkürzungsverzeichnisses/Glossars aktivieren ------------------------------
+% Activate the creation of an index, list of abbreviations and glossary ------------------------------
 \makeindex{}
-%\makenomenclature{}
 
 
-% Kopf- und Fußzeilen, Seitenränder etc. ---------------------------------------------------------------
+% Head- and footline, margins etc. ---------------------------------------------------------------
 \input{Layout}
 
 
-% eigene Definitionen für Silbentrennung ---------------------------------------------------------------
+% Own definitions for hyphenation ---------------------------------------------------------------
 \include{Hyphenation}
 
 
-% eigene LaTeX-Befehle ---------------------------------------------------------------------------------
+% Own and custom LaTeX commands ---------------------------------------------------------------------------------
 \include{Commands}
 
 
-% Das eigentliche Dokument -----------------------------------------------------------------------------
-%   Der eigentliche Inhalt des Dokuments beginnt hier. Die einzelnen Seiten
-%   und Kapitel werden in eigene Dateien ausgelagert und hier nur inkludiert.
+% Bibliography ---------------------------------------------------------------------------------------
+% The bibliogrphay is generated from the BibTeX database "Bibliography.bib" 
+% ------------------------------------------------------------------------------------------------------
+\bibliography{Bibliography} % Call: bibtex Bibliography
+%\defbibheading{bibliography}{\chapter*{\bibliographyheading}}
+
+
+% The actual document
+%  -----------------------------------------------------------------------------
+% The actual content of the document is beginning here. 
+% The seperate pages and chapter are sourced out and included here.
 % ------------------------------------------------------------------------------------------------------
 \begin{document}
 
 
-% auch subsubsections nummerieren ----------------------------------------------------------------------
+% give numbers to subsubsections ----------------------------------------------------------------------
 \setcounter{secnumdepth}{3}
-% Nummerierungsebenen im Inhaltsverzeichnis
+% Depth of the table of contents (don't show subsubsections
 \setcounter{tocdepth}{2}
 
 
-% Deckblatt und Abstract ohne Seitenzahl ---------------------------------------------------------------
+% Titlepage and abstract wihtout page numbering ---------------------------------------------------------------
 \ofoot{}
 \include{Titlepage}
 
-% Sperrvermerk ----------------------------------------------------------------------------
+% Confidential ----------------------------------------------------------------------------
 \include{Confidential}
 
-% Selbständigkeitserklärung ----------------------------------------------------------------------------
-\include{Declaration}
+% Decleration ----------------------------------------------------------------------------
+\include{Affidavit}
 
 %  Abstract ------------------------------------------------------------------------------------------
 \include{Content/Abstract}
 
-% Liste mit Todos -------------------------------------------------------------------------------------
+% List of todos ---------------------------------------------------------------------------------------
 \phantomsection
-%\markboth{Zu erledigende Punkte}{Liste der noch zu erledigenden Punkte}
 \listoftodos
 \newpage
 
 
 
-% Seitennummerierung -----------------------------------------------------------------------------------
-%   Vor dem Hauptteil werden die Seiten in großen römischen Ziffern 
-%   nummeriert.
+% Page numbering ------------------------------------------------------------------------------------
+%   Capital roman numbers before the main part.
 % ------------------------------------------------------------------------------------------------------
 \ofoot{\pagemark \\[4ex]}
 \pagenumbering{Roman}
 
-% Inhaltsverzeichnis --------------------------------------------------------------------------------------
-\phantomsection{} % Sorgt für korrekte Aufnahme des Inhaltsverzeichnisses in das Inhaltsverzeichnis
+% Table of contents --------------------------------------------------------------------------------------
+\phantomsection{} % Guarantees the correct inclusion of the section into the table of contents
 \addcontentsline{toc}{chapter}{Contents}
 \tableofcontents{}
 
 
-% Abkürzungsverzeichnis --------------------------------------------------------------------------------
+% List of abbreviations ---------------------------------------------------------------------------------
 \include{Content/Abbreviations}
 
-% Glossar ---------------------------------------------------------------------------------------------
+% Glossary ---------------------------------------------------------------------------------------------
 
 \makeglossaries
 \include{Content/Glossary}
@@ -132,50 +136,46 @@
 \label{cha:Glossary}
 
 
-% Restliche Verzeichnisse ------------------------------------------------------------------------------
-\listoffigures{} % Abbildungsverzeichnis
-\listoftables{} % Tabellenverzeichnis
+% Remaining listings ----------------------------------------------------------------------------------
+\listoffigures{} % List of figures
+\listoftables{} % List of tables
 \renewcommand{\lstlistlistingname}{List of Listings}
-\lstlistoflistings{} % Listings-Verzeichnis
+\lstlistoflistings{} % List of listings
 
-% arabische Seitenzahlen im Hauptteil ------------------------------------------------------------------
+% arabic page numbering in the main part ------------------------------------------------------------------
 \clearpage{}
 \pagenumbering{arabic}
 
 
-% die Inhaltskapitel werden in "Inhalt.tex" inkludiert -------------------------------------------------
+% the conent chapters are included in "Content.tex"  --------------------------------------------------------
 \input{Content}
 
 
 \clearpage{}
 \pagenumbering{Roman}
-\setcounter{page}{7} %%% Dieser Pagecounter muss entsprechend der verbrauchten Seiten im Inhaltsverzeichnis angepasst werden. Endet das IHV bei Seite III, so muss hier 4 eingetragen werden
+\setcounter{page}{7} %%% This page counter has to edited regarding the number of pages before the main part. If the listings ended with V, you have to set the counter to 6.
 
 
-% Literaturverzeichnis ---------------------------------------------------------------------------------
-%   Das Literaturverzeichnis wird aus der BibTeX-Datenbank "Bibliographie.bib"
-%   erstellt.
-% ------------------------------------------------------------------------------------------------------
-\bibliography{Bibliography} % Aufruf: bibtex Masterarbeit
-\bibliographystyle{agsm} % Harvard-Stil des Literaturverzeichnisses
+% Print the bibliography
+\printbibliography
 
 
 % Index ------------------------------------------------------------------------------------------------
-%   Zum Erstellen eines Index, die folgende Zeile auskommentieren.
+%   Uncomment this line for creating an index.
 % ------------------------------------------------------------------------------------------------------
 %\printindex
 
 
-% Anhang -----------------------------------------------------------------------------------------------
-%   Die Inhalte des Anhangs werden analog zu den Kapiteln inkludiert.
-%   Dies geschieht in der Datei "Anhang.tex".
+% Appendix -----------------------------------------------------------------------------------------------
+% The conents of the appendix are included like the chapters.
+% See file "Appendix.tex"
 % ------------------------------------------------------------------------------------------------------
 \begin{appendix}
     \clearpage{}
     \pagenumbering{roman}
     \chapter{Appendix}
     \label{sec:Appendix}
-    % Rand der Aufzählungen in Tabellen anpassen
+    % Margin of the enumerations in the table
     \setdefaultleftmargin{1em}{}{}{}{}{}
     \input{Appendix}
 \end{appendix}

@@ -1,89 +1,66 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX root =  Paper.tex
 
-% Anpassung des Seitenlayouts ---------------------------------------------------
-%   siehe Seitenstil.tex
+% Customisation of the page layout ---------------------------------------------------
+%   see Layout.tex
 % -----------------------------------------------------------------------------------------
 \usepackage[
-    automark, % Kapitelangaben in Kopfzeile automatisch erstellen
-    headsepline, % Trennlinie unter Kopfzeile
-    ilines % Trennlinie linksbündig ausrichten
+    automark, % automatically create chapter name in the headline
+    headsepline, % seperation line beneath headline
+    ilines % left seperate line
 ]{scrpage2}
 
 
-% Anpassung an Landessprache -------------------------------------------------
+% Customisation of the language -------------------------------------------------
 \usepackage[UKenglish]{babel}
 
 
-% Umlaute ------------------------------------------------------------------------------
-%   Umlaute/Sonderzeichen wie äüöß direkt im Quelltext verwenden (CodePage).
-%   Erlaubt automatische Trennung von Worten mit Umlauten.
-%   Für Umlaute siehe Hauptdokument Zeile 41
+% Special character 
 % -----------------------------------------------------------------------------------------
 \usepackage{textcomp} % Euro-Zeichen etc.
 
 
-% Schrift --------------------------------------------------------------------------------
-\usepackage{lmodern} % bessere Fonts
-\usepackage{relsize} % Schriftgröße relativ festlegen
+% Font --------------------------------------------------------------------------------
+\usepackage{lmodern} % better fonts
+\usepackage{relsize} % font size relatively
 
 
-% Bessere Unterstreichungen ---------------------------------------------
+% Better underlining ---------------------------------------------
 \usepackage[normalem]{ulem}
 
 
-% Grafiken -----------------------------------------------------------------------------
-% Einbinden von JPG-Grafiken ermöglichen
+% Graphics -----------------------------------------------------------------------------
+% Enable the inclusion of JPEG
 \usepackage[dvips,final]{graphicx}
-% hier liegen die Bilder des Dokuments
+% Path to the graphics
 \graphicspath{{Images/}}
 \usepackage{picture}
 
 
-% Befehle aus AMSTeX für mathematische Symbole z.B. \boldsymbol \mathbb
+% Commands from AMSTeX for mathematical symbols, e.g.  \boldsymbol \mathbb
 \usepackage{amsmath,amsfonts}
 
 
-% Eurozeichen benutzen ------------------------------------------------------------
+% Use Euro sign ------------------------------------------------------------
 \usepackage{eurosym}
 
 
-% für Index-Ausgabe mit \printindex -----------------------------------------------
+% For index with \printindex -----------------------------------------------
 \usepackage{makeidx}
 
 
-% Einfache Definition der Zeilenabstände und Seitenränder etc. ------------
+% Easy definition of margins and line spacing etc. ------------
 \usepackage{setspace}
 \usepackage{geometry}
 
 
-% Symbolverzeichnis ------------------------------------------------------------------
-%
-%   Symbolverzeichnisse bequem erstellen. Beruht auf MakeIndex:
-%     makeindex.exe %Name%.nlo -s nomencl.ist -o %Name%.nls
-%   erzeugt dann das Verzeichnis unter WIndows. Dieser Befehl kann z.B. im TeXnicCenter
-%   als Postprozessor eingetragen werden, damit er nicht ständig manuell
-%   ausgeführt werden muss.
-%
-%   Unter Unix bitte einfach das mitgelieferte Shellskript "makemyindex" nutzen.
-%
-%   Die Definitionen werden im Fließtext mit den Befehlen:
-%               - \Fachbegriff
-%               - \FachbegriffSpezial
-%               - \FachbegriffSpezialB
-%    erzeugt oder separat in die Datei "Glossar.tex" eingetragen.
-% -------------------------------------------------------------------------------------------
-%\usepackage[intoc]{nomencl}
-%\let\abbrev\nomenclature
-%\renewcommand{\nomname}{Abkürzungsverzeichnis und Glossar}
-%\setlength{\nomlabelwidth}{.25\hsize}
-%\renewcommand{\nomlabel}[1]{#1 \dotfill}
-%\setlength{\nomitemsep}{-\parsep}
+% For the list of abbreviations ------------------------
 \usepackage[
 	printonlyused,
 	footnote
 ]{acronym}
 
+% For the glossary -------------------------
 \usepackage[
 	nonumberlist, %keine Seitenzahlen anzeigen
 	%acronym,      %ein Abkürzungsverzeichnis erstellen
@@ -91,11 +68,11 @@
 	toc,          %Einträge im Inhaltsverzeichnis
 ]{glossaries}
 
-% zum Umfließen von Bildern ---------------------------------------------------------
+% Floating figures ---------------------------------------------------------
 \usepackage[vflt]{floatflt}
 \usepackage{subfigure}
 
-% zum Einbinden von Programmcode -----------------------------------------------
+% Inclusion of program code -----------------------------------------------
 \usepackage{listings}
 \usepackage{xcolor} 
 \definecolor{hellgelb}{rgb}{1,1,0.9}
@@ -128,7 +105,7 @@
 
 % --------------------------------------------------------------------------------------------
 % 
-% Eigene Definitionen für Quelltext-Stile
+% Definition of source code
 %
 % Define CSS:
 \lstdefinelanguage{CSS}{
@@ -190,65 +167,65 @@
 } 
 
 
-% URL verlinken, lange URLs umbrechen etc. -------------------------------------
+% link URL, break long URL etc. -------------------------------------
 \usepackage{url}
 
 
-% natbib einbinden -----------------------------------------------------------------------
-\usepackage[round, numbers, sort, authoryear]{natbib}
+% include biblatex -----------------------------------------------------------------------
+\usepackage[style=authoryear-ibid, hyperref=true]{biblatex}
 
 
-% PDF-Optionen -------------------------------------------------------------------------
+% PDF Options -------------------------------------------------------------------------
 \usepackage[
     bookmarks,
     bookmarksopen=true,
     colorlinks=true,
-% diese Farbdefinitionen zeichnen Links im PDF farblich aus
-    linkcolor=red, % einfache interne Verknüpfungen
-    anchorcolor=black,% Ankertext
-    citecolor=blue, % Verweise auf Literaturverzeichniseinträge im Text
-    filecolor=magenta, % Verknüpfungen, die lokale Dateien öffnen
-    menucolor=red, % Acrobat-Menüpunkte
+% use this colour definitions for links with colour
+    linkcolor=red, % simple internal link
+    anchorcolor=black,% anchor text
+    citecolor=blue, % Anchor to bibliography entries in the text
+    filecolor=magenta, % Anchors to local files
+    menucolor=red, % Acrobat menu entries
     urlcolor=cyan, 
 %
-% diese Farbdefinitionen sollten für den Druck verwendet werden (alles schwarz):
+% use this colour definitions for pring: everything is black
 %
-    %linkcolor=black, % einfache interne Verknüpfungen
-    %anchorcolor=black, % Ankertext
-    %citecolor=black, % Verweise auf Literaturverzeichniseinträge im Text
-    %filecolor=black, % Verknüpfungen, die lokale Dateien öffnen
-    %menucolor=black, % Acrobat-Menüpunkte
+    %linkcolor=black, % simple internal link
+    %anchorcolor=black, % anchor text
+    %citecolor=black, %Anchor to bibliography entries in the text
+    %filecolor=black, % Anchors to local files
+    %menucolor=black, % Acrobat menu entries
     %urlcolor=black, 
 %
-    backref,
-    plainpages=false, % zur korrekten Erstellung der Bookmarks
-    pdfpagelabels, % zur korrekten Erstellung der Bookmarks
-    hypertexnames=false, % zur korrekten Erstellung der Bookmarks
-    linktocpage % Seitenzahlen anstatt Text im Inhaltsverzeichnis verlinken
+%    backref,
+    plainpages=false, % for the correct creation of bookmarks
+    pdfpagelabels, % for the correct creation of bookmarks
+    hypertexnames=false, % for the correct creation of bookmarks
+    linktocpage % link the page numbers instead of the whole toc entry
 ]{hyperref}
-% Befehle, die Umlaute ausgeben, führen zu Fehlern, wenn sie hyperref als Optionen übergeben werden
+% Commands with print special characters cause errors if they are used with hyperref
 \hypersetup{
-    pdftitle={\titel \untertitel},
-    pdfauthor={\autor},
+    pdftitle={\myTitle \mySubtitle},
+    pdfauthor={\myAuthor},
     pdfcreator={\creator},
-    pdfsubject={\titel \untertitel},
+    pdfsubject={\myTitle \mySubtitle},
     pdfkeywords={\keywords},
 }
 
-% Paket zum sauberen Einbauen von externen PDF-Dateien -----------------
+% Package for a clean inclusion of external PDF files -----------------
 \usepackage[final]{pdfpages}
 
 
-% fortlaufendes Durchnummerieren der Fußnoten -------------------------------
+% Continuous numeration of footnotes -------------------------------
 \usepackage{chngcntr}
 
 
-% schönere Tabellen --------------------------------------------------------------------
+% nicer tables --------------------------------------------------------------------
 \usepackage{tabularx}
 \usepackage{multirow}
 
 
-% für lange Tabellen ---------------------------------------------------------------------
+% for long tables ---------------------------------------------------------------------
 \usepackage{longtable}
 \usepackage{ltxtable}
 \usepackage{filecontents}
@@ -257,23 +234,23 @@
 \usepackage{lscape}
 
 
-% Rotation von Elementen -------------------------------------------------------
+% rotation of elements -------------------------------------------------------
 \usepackage{rotating}
 
 
-% Formatierung von Listen ändern --------------------------------------------------
+% Change the formatting of lists --------------------------------------------------
 \usepackage{paralist}
 \usepackage{enumitem}
 
 
-% bei der Definition eigener Befehle benötigt -------------------------------------
+% Necessary for the creation of own commands -------------------------------------
 \usepackage{ifthen}
 \usepackage{forloop}
 
 
-% definiert u.a. die Befehle \todo und \listoftodos --------------------------------
+% defines commands for \todo and \listoftodos --------------------------------
 \usepackage[english]{todonotes}
 
 
-% sorgt dafür, dass Leerzeichen hinter parameterlosen Makros nicht als Makroendezeichen interpretiert werden
+% used for the end of macros without parameter
 \usepackage{xspace}
