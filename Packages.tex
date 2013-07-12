@@ -53,21 +53,6 @@
 \usepackage{setspace}
 \usepackage{geometry}
 
-
-% For the list of abbreviations ------------------------
-\usepackage[
-	printonlyused,
-	footnote
-]{acronym}
-
-% For the glossary -------------------------
-\usepackage[
-	nonumberlist, %keine Seitenzahlen anzeigen
-	%acronym,      %ein Abkürzungsverzeichnis erstellen
-	%section,     %im Inhaltsverzeichnis auf section-Ebene erscheinen
-	toc,          %Einträge im Inhaltsverzeichnis
-]{glossaries}
-
 % Floating figures ---------------------------------------------------------
 \usepackage[vflt]{floatflt}
 \usepackage{subfigure}
@@ -172,7 +157,8 @@
 
 
 % include biblatex -----------------------------------------------------------------------
-\usepackage[style=authoryear-ibid, hyperref=true]{biblatex}
+\usepackage[style=authoryear-ibid, hyperref=true, backend=biber, babel=hyphen]{biblatex}
+\usepackage[english=british]{csquotes}
 
 
 % PDF Options -------------------------------------------------------------------------
@@ -212,9 +198,17 @@
     pdfkeywords={\keywords},
 }
 
+% For the glossary and abbreviations -------------------------
+\usepackage[
+	xindy,
+	nonumberlist,	% keine Seitenzahlen anzeigen
+	acronym,			% ein Abkürzungsverzeichnis erstellen
+	toc,					% Einträge im Inhaltsverzeichnis
+	shortcuts			% acronym shortcuts
+]{glossaries}
+
 % Package for a clean inclusion of external PDF files -----------------
 \usepackage[final]{pdfpages}
-
 
 % Continuous numeration of footnotes -------------------------------
 \usepackage{chngcntr}
@@ -254,3 +248,6 @@
 
 % used for the end of macros without parameter
 \usepackage{xspace}
+
+% used for bold labels in bibliography entries
+\usepackage{xpatch}

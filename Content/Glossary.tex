@@ -2,7 +2,23 @@
 % !TEX root =  ../Paper.tex
 
 %
-% Glossareintraege --> referenz, name, beschreibung
-% Aufruf mit \gls{...}
+% Acronyms --> reference, short, long
+% Glossary entires --> reference, name, description
+% Call with \gls{...}
 %
-\newglossaryentry{Glossaryentry}{name={Glossary entry},plural={Glossary entires},description={A glossary describes many different things in little words.}}
+
+%%
+% Acronyms
+%%
+\newacronym{AGPL}{AGPL}{Affero GNU General Public License}
+\newacronym{API}{API}{Application Programming Interface}
+\newacronym{WYSIWYG}{WYSIWYG}{What You See Is What You Get}
+
+%%
+% Glossary
+%%
+\newglossaryentry{Glossaryentry}{
+	name={Glossary entry},
+	plural={Glossary entries},
+	description={A glossary describes many different things in little words}
+}
