@@ -1,6 +1,6 @@
 
 #LaTeX Template For Scientific Papers
-*Version 1.0.1, 30.06.2013*
+*Version 1.0.2, 12.07.2013*
 
 **English version follows.**
 
@@ -18,9 +18,9 @@ Diese Version der LaTeX-Vorlage für wissenschaftliche Arbeiten basiert auf eine
 * Definition verschiedener Befehle zum Zitieren mit dem Paket `nomenclature`
 
 
-Die vorliegende Version der Vorlage wurde dahingehend verändert, dass Glossar und Abkürzungsverzeichnis nicht mehr gemeinsam mit dem Paket `nomenclature`, sondern das Glossar mit dem Paket `glossaries` und das Abkürzungsverzeichnis mit dem Paket `acronym` verwaltet werden. Daher wurden die Befehle von Felix entfernt, sowie das Skript `makemyindex`.
+Die vorliegende Version der Vorlage wurde dahingehend verändert, dass Glossar und Abkürzungsverzeichnis nicht mehr gemeinsam mit dem Paket `nomenclature`, sondern ~~das Glossar mit dem Paket `glossaries` und das Abkürzungsverzeichnis mit dem Paket `acronym`~~ sowohl das Glossar, als auch das Abkürzungsverzeichnis mit dem Paket `glossaries` verwaltet werden. Beispiele sind in der Vorlage zu finden. Daher wurden die Befehle von Felix entfernt, sowie das Skript `makemyindex`.
 
-Da ich an der [Dualen Hochschule Baden-Württemberg Stuttgart](http://www.dhbw-stuttgart.de) studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Anstatt `bibtex`wird `biblatex`zur Erzeugung des Bibliographiverzeichnises verwendet. Als Bibliographie-Stil wird der Stil `authoryear` verwendet. In den Metadefinitionen kann die Überschrift des Bibliographiverzeichnisses festgelegt werden.
+Da ich an der [Dualen Hochschule Baden-Württemberg Stuttgart](http://www.dhbw-stuttgart.de) studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Anstatt `bibtex`wird `biblatex`zur Erzeugung des Bibliographiverzeichnises verwendet. Als Bibliographie-Stil wird der Stil `authoryear-ibid` und als Backend `biber` stat `bibtex` verwendet. Ich habe ebenfalls die Labels im Literaturverzeichnis angepasst, sodass diese fett sind. In den Metadefinitionen kann die Überschrift des Bibliographiverzeichnisses festgelegt werden.
 
 ###Hinweise:
 
@@ -45,9 +45,9 @@ This version of the LaTeX template for scientific papers is based on an expanded
 * additional template for a self-bended jewel case (InDesign and PDF)
 * definition of custom commands for citation with the package `nomenclature`
 
-In this template the glossary and list of abbreviations aren't done with the package `nomenclature` anymore. Instead the package `glossaries` is used for the glossary and the package `acronym` is used for the list of abbrevations. Now they can be used seperately. Therefore the custom commands by Felix and the script `makemyindex` are removed.
+In this template the glossary and list of abbreviations aren't done with the package `nomenclature` anymore. ~~Instead the package `glossaries` is used for the glossary and the package `acronym` is used for the list of abbrevations.~~ Instead of `nomenclature` the `glossaries` package is used. Acronyms as well as glossary entries are done that way. Examples are provided in the template. Now they can be used seperately. Therefore the custom commands by Felix and the script `makemyindex` are removed.
 
-Because I'm studying at the [Baden-Wuerttemberg Cooperative State University Stuttgart](http://www.dhbw-stuttgart.de/service/english/about-us.html) and the students have to write a thesis every practical term, the template fits the requirements of the uni. The listings are moved to the front again and the titlepage is customised. For the bibliography the package `biblatex` is now used. The bibliography style is `authoryear`. You can easily define the heading of the bibliography in the meta definitions.
+Because I'm studying at the [Baden-Wuerttemberg Cooperative State University Stuttgart](http://www.dhbw-stuttgart.de/service/english/about-us.html) and the students have to write a thesis every practical term, the template fits the requirements of the uni. The listings are moved to the front again and the titlepage is customised. For the bibliography the package `biblatex` is now used. The bibliography style is `authoryear-ibid` and as backend `biber` is used instead of `bibtex`. I also customized the labels in the bibliography such that they are bold. You can easily define the heading of the bibliography in the meta definitions.
 
 ###Notes
 

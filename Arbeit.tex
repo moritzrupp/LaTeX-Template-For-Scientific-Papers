@@ -14,8 +14,8 @@
 % erweitert und angepasst von Moritz Rupp
 % moritz.rupp@gmail.com
 %
-% Version 1.0
-% Datum: 01.06.2013
+% Version 1.0.2
+% Datum: 12.07.2013
 
 
 % Dokumentenkopf ---------------------------------------------------------------------------------------
@@ -82,6 +82,14 @@
 \defbibheading{literaturverzeichnis}{\chapter*{\bibliographyheading}}
 
 
+% Glossar --------------------------------------------------------------------------------
+\makeglossaries
+\loadglsentries{Inhalt/Glossar.tex}
+
+% Hinzufügen der nicht benutzten Glossareinträge (falls noch eine Abkürzung vorhanden ist und nur diese verwendet wird)
+%\glsadd{beispiel}
+
+
 % Das eigentliche Dokument -----------------------------------------------------------------------------
 %   Der eigentliche Inhalt des Dokuments beginnt hier. Die einzelnen Seiten
 %   und Kapitel werden in eigene Dateien ausgelagert und hier nur inkludiert.
@@ -129,14 +137,19 @@
 \tableofcontents{}
 
 
-% Abkürzungsverzeichnis --------------------------------------------------------------------------------
-\include{Inhalt/Abkuerzungsverzeichnis}
+%%
+% Anzeigen des Abkürzungsverzeichnisses und des Glossars -------------------------------------
+%%
 
-% Glossar ---------------------------------------------------------------------------------------------
+% Abkürzungsverzeichnis anzeigen
+\newpage
+\markboth{Abkürzungsverzeichnis}{Abkürzungsverzeichnis}
+\printglossary[style=listdotted, type=\acronymtype, title={Abkürzungsverzeichnis}, toctitle={Abkürzungsverzeichnis}]
+\label{cha:Abkuerzungsverzeichnis}
 
-\makeglossaries
-\include{Inhalt/Glossar}
-\printglossary[style=altlist, title=Glossar]
+% print glossary
+\newpage
+\printglossary[style=altlist,type=main]
 \label{cha:Glossar}
 
 
@@ -163,6 +176,20 @@
 % Literaturverzeichnis anzeigen
 \phantomsection
 \addcontentsline{toc}{chapter}{\bibliographyheading}
+
+\setlength\bibitemsep{2\itemsep} % Abstand zwischen einträgen verdoppeln
+\setlength{\bibhang}{0.2cm}
+
+% Fette Literaturverzeichnis einträge
+\xpretobibmacro{author}{\mkbibbold\bgroup}{}{}
+\xapptobibmacro{author}{\egroup}{}{}
+\xpretobibmacro{bbx:editor}{\mkbibbold\bgroup}{}{}
+\xapptobibmacro{bbx:editor}{\egroup}{}{}
+
+\renewcommand*{\labelnamepunct}{\mkbibbold{\addcolon\space}} 
+
+\markboth{\bibliographyheading}{\bibliographyheading}
+
 \printbibliography[heading=literaturverzeichnis]
 
 

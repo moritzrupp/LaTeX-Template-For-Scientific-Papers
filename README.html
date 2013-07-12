@@ -150,7 +150,7 @@ pre code {
 <body>
 <h1>LaTeX Template For Scientific Papers</h1>
 
-<p><em>Version 1.0.1, 30.06.2013</em></p>
+<p><em>Version 1.0.2, 12.07.2013</em></p>
 
 <p><strong>English version follows.</strong></p>
 
@@ -170,9 +170,9 @@ pre code {
 </ul>
 
 
-<p>Die vorliegende Version der Vorlage wurde dahingehend verändert, dass Glossar und Abkürzungsverzeichnis nicht mehr gemeinsam mit dem Paket <code>nomenclature</code>, sondern das Glossar mit dem Paket <code>glossaries</code> und das Abkürzungsverzeichnis mit dem Paket <code>acronym</code> verwaltet werden. Daher wurden die Befehle von Felix entfernt, sowie das Skript <code>makemyindex</code>.</p>
+<p>Die vorliegende Version der Vorlage wurde dahingehend verändert, dass Glossar und Abkürzungsverzeichnis nicht mehr gemeinsam mit dem Paket <code>nomenclature</code>, sondern <del>das Glossar mit dem Paket <code>glossaries</code> und das Abkürzungsverzeichnis mit dem Paket <code>acronym</code></del> sowohl das Glossar, als auch das Abkürzungsverzeichnis mit dem Paket <code>glossaries</code> verwaltet werden. Beispiele sind in der Vorlage zu finden. Daher wurden die Befehle von Felix entfernt, sowie das Skript <code>makemyindex</code>.</p>
 
-<p>Da ich an der <a href="http://www.dhbw-stuttgart.de">Dualen Hochschule Baden-Württemberg Stuttgart</a> studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Anstatt <code>bibtex</code>wird <code>biblatex</code>zur Erzeugung des Bibliographiverzeichnises verwendet. Als Bibliographie-Stil wird der Stil <code>authoryear</code> verwendet. In den Metadefinitionen kann die Überschrift des Bibliographiverzeichnisses festgelegt werden.</p>
+<p>Da ich an der <a href="http://www.dhbw-stuttgart.de">Dualen Hochschule Baden-Württemberg Stuttgart</a> studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Anstatt <code>bibtex</code>wird <code>biblatex</code>zur Erzeugung des Bibliographiverzeichnises verwendet. Als Bibliographie-Stil wird der Stil <code>authoryear-ibid</code> und als Backend <code>biber</code> stat <code>bibtex</code> verwendet. Ich habe ebenfalls die Labels im Literaturverzeichnis angepasst, sodass diese fett sind. In den Metadefinitionen kann die Überschrift des Bibliographiverzeichnisses festgelegt werden.</p>
 
 <h3>Hinweise:</h3>
 
@@ -200,9 +200,9 @@ pre code {
 </ul>
 
 
-<p>In this template the glossary and list of abbreviations aren't done with the package <code>nomenclature</code> anymore. Instead the package <code>glossaries</code> is used for the glossary and the package <code>acronym</code> is used for the list of abbrevations. Now they can be used seperately. Therefore the custom commands by Felix and the script <code>makemyindex</code> are removed.</p>
+<p>In this template the glossary and list of abbreviations aren't done with the package <code>nomenclature</code> anymore. <del>Instead the package <code>glossaries</code> is used for the glossary and the package <code>acronym</code> is used for the list of abbrevations.</del> Instead of <code>nomenclature</code> the <code>glossaries</code> package is used. Acronyms as well as glossary entries are done that way. Examples are provided in the template. Now they can be used seperately. Therefore the custom commands by Felix and the script <code>makemyindex</code> are removed.</p>
 
-<p>Because I'm studying at the <a href="http://www.dhbw-stuttgart.de/service/english/about-us.html">Baden-Wuerttemberg Cooperative State University Stuttgart</a> and the students have to write a thesis every practical term, the template fits the requirements of the uni. The listings are moved to the front again and the titlepage is customised. For the bibliography the package <code>biblatex</code> is now used. The bibliography style is <code>authoryear</code>. You can easily define the heading of the bibliography in the meta definitions.</p>
+<p>Because I'm studying at the <a href="http://www.dhbw-stuttgart.de/service/english/about-us.html">Baden-Wuerttemberg Cooperative State University Stuttgart</a> and the students have to write a thesis every practical term, the template fits the requirements of the uni. The listings are moved to the front again and the titlepage is customised. For the bibliography the package <code>biblatex</code> is now used. The bibliography style is <code>authoryear-ibid</code> and as backend <code>biber</code> is used instead of <code>bibtex</code>. I also customized the labels in the bibliography such that they are bold. You can easily define the heading of the bibliography in the meta definitions.</p>
 
 <h3>Notes</h3>
 

@@ -57,41 +57,6 @@
 \usepackage{setspace}
 \usepackage{geometry}
 
-
-% Symbolverzeichnis ------------------------------------------------------------------
-%
-%   Symbolverzeichnisse bequem erstellen. Beruht auf MakeIndex:
-%     makeindex.exe %Name%.nlo -s nomencl.ist -o %Name%.nls
-%   erzeugt dann das Verzeichnis unter WIndows. Dieser Befehl kann z.B. im TeXnicCenter
-%   als Postprozessor eingetragen werden, damit er nicht ständig manuell
-%   ausgeführt werden muss.
-%
-%   Unter Unix bitte einfach das mitgelieferte Shellskript "makemyindex" nutzen.
-%
-%   Die Definitionen werden im Fließtext mit den Befehlen:
-%               - \Fachbegriff
-%               - \FachbegriffSpezial
-%               - \FachbegriffSpezialB
-%    erzeugt oder separat in die Datei "Glossar.tex" eingetragen.
-% -------------------------------------------------------------------------------------------
-%\usepackage[intoc]{nomencl}
-%\let\abbrev\nomenclature
-%\renewcommand{\nomname}{Abkürzungsverzeichnis und Glossar}
-%\setlength{\nomlabelwidth}{.25\hsize}
-%\renewcommand{\nomlabel}[1]{#1 \dotfill}
-%\setlength{\nomitemsep}{-\parsep}
-\usepackage[
-	printonlyused,
-	footnote
-]{acronym}
-
-\usepackage[
-	nonumberlist, %keine Seitenzahlen anzeigen
-	%acronym,      %ein Abkürzungsverzeichnis erstellen
-	%section,     %im Inhaltsverzeichnis auf section-Ebene erscheinen
-	toc,          %Einträge im Inhaltsverzeichnis
-]{glossaries}
-
 % zum Umfließen von Bildern ---------------------------------------------------------
 \usepackage[vflt]{floatflt}
 \usepackage{subfigure}
@@ -196,7 +161,7 @@
 
 
 % biblatex einbinden -----------------------------------------------------------------------
-\usepackage[style=authoryear-ibid, hyperref=true]{biblatex}
+\usepackage[style=authoryear-ibid, hyperref=true, backend=biber, babel=hyphen]{biblatex}
 
 % PDF-Optionen -------------------------------------------------------------------------
 \usepackage[
@@ -234,6 +199,15 @@
     pdfsubject={\titel \untertitel},
     pdfkeywords={\keywords},
 }
+
+% Glossar und Abkürzungsverzeichnis -------------------------
+\usepackage[
+	xindy,
+	nonumberlist,	% keine Seitenzahlen anzeigen
+	acronym,			% ein Abkürzungsverzeichnis erstellen
+	toc,					% Einträge im Inhaltsverzeichnis
+	shortcuts			% Acronym-Abkürzungen
+]{glossaries}
 
 % Paket zum sauberen Einbauen von externen PDF-Dateien -----------------
 \usepackage[final]{pdfpages}
@@ -277,3 +251,6 @@
 
 % sorgt dafür, dass Leerzeichen hinter parameterlosen Makros nicht als Makroendezeichen interpretiert werden
 \usepackage{xspace}
+
+% Für fette Bibliographieeinträge
+\usepackage{xpatch}

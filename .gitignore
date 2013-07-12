@@ -15,6 +15,16 @@
 *.nls
 *.fls
 *.ind
-*.tdo
 *.fdb_latexmk
+*.glo
+*.gls
+*.glg
+*.ist
+*.tdo
+*.idx
+*.ist
+*.run.xml
+*-blx.bib
+*.bak
+*.xdy
 .DS_Store
