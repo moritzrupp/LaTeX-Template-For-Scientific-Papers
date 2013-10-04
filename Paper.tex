@@ -6,16 +6,16 @@
 %	originally created by Stefan Macke, 24/04/2009
 %	http://blog.stefan-macke.de
 %
-%	for the first time expanded  by Felix Rupp, 21/05/2009
+%	for the first time expanded by Felix Rupp, 21/05/2009
 %	http://www.felixrupp.com/
 %
 %
 %
-% expaneded und customised by Moritz Rupp
+% expaneded and customised by Moritz Rupp
 % moritz.rupp@gmail.com
 %
-% Version 1.0.2
-% Date: 12/07/2013
+% Version 2.0
+% Date: 04/10/2013
 
 
 % Document head ---------------------------------------------------------------------------------------
@@ -75,8 +75,11 @@
 % Bibliography ---------------------------------------------------------------------------------------
 % The bibliogrphay is generated from the BibTeX database "Bibliography.bib" 
 % ------------------------------------------------------------------------------------------------------
-\bibliography{Bibliography} % Call: bibtex Bibliography
-%\defbibheading{bibliography}{\chapter*{\bibliographyheading}}
+\bibliography{Bibliography} % Call: biber Bibliography
+
+% For different sections in the bibliography use the defbibheading command -----------------------------------------------
+\defbibheading{internet}{\section*{Internet and Intranet Resources}}
+\defbibheading{literature}{\section*{Literature}}
 
 % Glossary --------------------------------------------------------------------------------
 \makeglossaries
@@ -103,20 +106,22 @@
 \ofoot{}
 \include{Titlepage}
 
-% Confidential ----------------------------------------------------------------------------
-\include{Confidential}
+% Decleration of Honour ----------------------------------------------------------------------------
+\include{DeclarationOfHonour}
 
-% Decleration ----------------------------------------------------------------------------
-\include{Affidavit}
+% Non-disclosure Note ----------------------------------------------------------------------------
+\include{NonDisclosureNote}
+
 
 %  Abstract ------------------------------------------------------------------------------------------
 \include{Content/Abstract}
 
 % List of todos ---------------------------------------------------------------------------------------
-\phantomsection
-\listoftodos
-\newpage
-
+% Uncomment for printing the list of todos.
+%\phantomsection
+%\markboth[Todo list}{Todo list}
+%\listoftodos
+%\newpage
 
 
 % Page numbering ------------------------------------------------------------------------------------
@@ -137,15 +142,15 @@
 
 % print acronyms
 \newpage
-\markboth{List of Abbreviations}{List of Abbreviations}
-\printglossary[style=listdotted, type=\acronymtype, title={List of Abbreviations}, toctitle={List of Abbreviations}]
-\label{cha:Abbreviations}
-
-% print glossary
-\newpage
+\renewcommand{\glsnamefont}[1]{\makefirstuc{#1}} %make the first letter uppercase in the glossary
 \printglossary[style=altlist,type=main]
 \label{cha:Glossary}
 
+% print acronyms
+\newpage
+\markboth{List of Abbreviations}{List of Abbreviations}
+\printglossary[style=listdotted, type=\acronymtype, title={List of Abbreviations}]
+\label{cha:Abbreviations}
 
 % Remaining listings ----------------------------------------------------------------------------------
 \listoffigures{} % List of figures
@@ -168,18 +173,17 @@
 
 
 % Print the bibliography
-\setlength\bibitemsep{2\itemsep} % Set the space between bibliography entries
-\setlength{\bibhang}{0.2cm}
+\phantomsection
+\markboth{Bibliography}{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+\chapter*{Bibliography}
 
-% Bold bibliography entries
-\xpretobibmacro{author}{\mkbibbold\bgroup}{}{}
-\xapptobibmacro{author}{\egroup}{}{}
-\xpretobibmacro{bbx:editor}{\mkbibbold\bgroup}{}{}
-\xapptobibmacro{bbx:editor}{\egroup}{}{}
-
-\renewcommand*{\labelnamepunct}{\mkbibbold{\addcolon\space}} 
-
-\printbibliography
+\printbibliography[notkeyword=Online, heading=literature] % List all the keywords not to be printed
+\begingroup
+	\raggedright
+	\sloppy
+	\printbibliography[keyword=Online, heading=internet] % List the keyword for this bibliography section
+\endgroup
 
 
 % Index ------------------------------------------------------------------------------------------------

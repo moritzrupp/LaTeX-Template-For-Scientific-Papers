@@ -8,38 +8,49 @@
 
 \begin{center}
 
-\LARGE{\textbf{\myTitle}}\\[1.5ex]
-\Large{\textbf{\mySubtitleTitlepage}}\\[6ex]
+\LARGE{\textbf{\myTitleTitlepage}}\\
+\Large{\textbf{\mySubtitleTitlepage}}\\[4ex]
+
 \Large{\textbf{\kind}}\\[1.5ex]
 
 \changefont{cmss}{m}{n}
-\large{\area \\ \study}\\[6ex]
+\large{\area{} \\ \study}\\[1ex]
+\large{at the \university{} \place}\\[6ex]
 
 by
 
-\large{\textbf{\myAuthor}} \\[3ex]
+\large{\textbf{\myAuthor}} \\[2ex]
 
-September \myYear \\[6ex]
+October \myYear
+
+\vspace{\fill}
 
 % 2 Logos -------------------
-%\begin{tabular}{p{40mm}cp{40mm}c}
+%\begin{tabular}{p{50mm}cp{50mm}c}
 %	\includegraphics[scale=0.16]{Logo.pdf} & \includegraphics[trim=0mm 100mm 0mm 100mm, scale=0.25]{Logo.pdf}
 %\end{tabular}
 
 % 1 Logo ----------------------
 \includegraphics[width=0.5\textwidth]{Logo.pdf}
-\\[6ex]
+
+\vspace{\fill}
 
 \normalsize{}
+\renewcommand{\arraystretch}{1}
 \begin{tabular}{ll}
 Time needed for completion:  & \quad 12 Weeks\\
-Student No., Course: & \quad \studentno, \course\\
+Student No.\,, Course: & \quad \studentno, \course\\
 Company: & \quad \company, company location\\
-Tutor:  & \quad \firstreviewer\\
+Supervisor:  & \quad \firstreviewer\\
 Second reviewer: & \quad \secondreviewer\\
-submitted in: & \quad \place, the 12/August/2011
+Submitted in: & \quad \place, 4th October 2013
 \end{tabular}
+\renewcommand{\arraystretch}{\TableCellPadding}
 
 \end{center}
+
+\begin{description}
+	\item[Keywords:] \keywords
+\end{description}
 
 \end{titlepage}
