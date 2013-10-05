@@ -150,35 +150,40 @@ pre code {
 <body>
 <h1>LaTeX Template For Scientific Papers</h1>
 
-<p><em>Version 1.0.2, 12.07.2013</em></p>
+<p><em>Version 2.0, 04.10.2013</em></p>
+
+<p>Please use the branch german respectively english for a checkout / Bitte verwenden den Branch german bzw. english für einen Checkout</p>
 
 <p><strong>English version follows.</strong></p>
 
 <hr />
 
-<p><em>Diese Vorlage basiert auf einer Vorlage von <a href="http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/">Stefan Macke</a>, erstmalig erweitert von Felix Rupp. Vielen Dank für grandiose Arbeit!</em></p>
+<p><em>Diese Vorlage basiert auf einer Vorlage von <a href="http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/">Stefan Macke</a>, erstmalig erweitert von <a href="https://github.com/felixrupp/LaTeX-Vorlage-Wissenschaftliche-Arbeit">Felix Rupp</a>. Vielen Dank für grandiose Arbeit!</em></p>
 
-<p>Diese Version der LaTeX-Vorlage für wissenschaftliche Arbeiten basiert auf einer erweiterten Version (1.2) von <a href="https://github.com/felixrupp/LaTeX-Vorlage-Wissenschaftliche-Arbeit">Felix Rupp</a> vom 21.05.2013. Es wurden folgende Features von ihm hinzugefügt:</p>
+<p>Diese LaTeX Vorlage ist für generelle wissenschaftliche Arbeit (speziell Theses, Praxisberichte, Diplomarbeiten, etc.).</p>
+
+<p>Die Vorlage wurde im Rahmen meines Studiums and der <a href="http://www.dhbw-stuttgart.de/home.html">Dualen Hochschule Baden-Württemberg Stuttgart</a> geforked und weiterentwickelt. Daher ist sie besonders für Studierende der DHBW geeignet, um Ihre Praxisberichte/Studienarbeiten zu verfassen.</p>
+
+<p>Hauptmerkmale sind:</p>
 
 <ul>
-<li>Umstellung auf UTF-8</li>
-<li>Anpassung an die Vorgaben des Referenten (u.a. Verzeichnisse ans Ende)</li>
-<li>Möglichkeit zum parsen des Glossars mit Hilfe des Skripts <code>makemyindex</code></li>
-<li>Anpassungen der <code>natdin.bst</code></li>
-<li>Hinzufügen einer InDesign/PDF Vorlage zum selbst falten einer CD-Hülle</li>
-<li>Definition verschiedener Befehle zum Zitieren mit dem Paket <code>nomenclature</code></li>
+<li>UTF-8</li>
+<li>Inhalt leicht und verständlich hinzufügen</li>
+<li>Vollständig anpassbar</li>
+<li>Glossar und Abkürzungsverzeichnis mit dem Paket <code>glossaries</code></li>
+<li>Literaturverzeichnis basierend auf einem angepassten <code>author-year</code> Stil</li>
+<li>Literaturverzeichnis kann in Unterkapitel geteilt werden (z.B. Fachliteratur und Internet Quellen)</li>
+<li>Deutsche und Englische Version verfügbar</li>
+<li>Druck- und Digitalversion</li>
+<li>…und vieles mehr!</li>
 </ul>
 
 
-<p>Die vorliegende Version der Vorlage wurde dahingehend verändert, dass Glossar und Abkürzungsverzeichnis nicht mehr gemeinsam mit dem Paket <code>nomenclature</code>, sondern <del>das Glossar mit dem Paket <code>glossaries</code> und das Abkürzungsverzeichnis mit dem Paket <code>acronym</code></del> sowohl das Glossar, als auch das Abkürzungsverzeichnis mit dem Paket <code>glossaries</code> verwaltet werden. Beispiele sind in der Vorlage zu finden. Daher wurden die Befehle von Felix entfernt, sowie das Skript <code>makemyindex</code>.</p>
-
-<p>Da ich an der <a href="http://www.dhbw-stuttgart.de">Dualen Hochschule Baden-Württemberg Stuttgart</a> studiere und in jedem Semester Praxisarbeiten geschrieben werden müssen, wurde diese Vorlage an die Anforderungen der DHBW angepasst. Die Verzeichnisse wurden erneut an den Anfang gestellt und das Deckblatt angepasst. Anstatt <code>bibtex</code>wird <code>biblatex</code>zur Erzeugung des Bibliographiverzeichnises verwendet. Als Bibliographie-Stil wird der Stil <code>authoryear-ibid</code> und als Backend <code>biber</code> stat <code>bibtex</code> verwendet. Ich habe ebenfalls die Labels im Literaturverzeichnis angepasst, sodass diese fett sind. In den Metadefinitionen kann die Überschrift des Bibliographiverzeichnisses festgelegt werden.</p>
-
 <h3>Hinweise:</h3>
 
-<p>Nutze die Bibliographie-Verwaltung!</p>
+<p>Nutze die Bibliographie-Verwaltung! Es liegt ebenfalls eine Vorlage für eine CD Hülle bei.</p>
 
-<p>Die ursprünglichen Vorlagen von Stefan und Felix (in Version 1.2 vom 21.05.2013) liegen im Ordner <code>Resourcen</code> als ZIP-Dateien bei.</p>
+<p>Die ursprünglichen Vorlagen von Stefan und Felix (in Version 1.2 vom 21.05.2013) liegen im Ordner <code>Resourcen</code>.</p>
 
 <p>Bei Frage kannst du dich gerne an mich wenden: <a href="mailto:morit.zrupp@gmail.com">moritz.rupp@gmail.com</a></p>
 
@@ -186,27 +191,31 @@ pre code {
 
 <h2>English version</h2>
 
-<p><em>This template is based on a version by <a href="http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/">Stefan Macke</a>, for the first time expanded by Felix Rupp. Thank you a lot for this magnificent work!</em></p>
+<p><em>This template is based on a version by <a href="http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/">Stefan Macke</a>, for the first time expanded by <a href="https://github.com/felixrupp/LaTeX-Vorlage-Wissenschaftliche-Arbeit">Felix Rupp</a>. Thank you a lot for this magnificent work!</em></p>
 
-<p>This version of the LaTeX template for scientific papers is based on an expanded version (1.2) by Felix Rupp from the 21/05/2013. He added the following features:</p>
+<p>This LaTeX template is for general scientific papers (specially theses, practical reports, etc.).</p>
+
+<p>It has been forked and further developed during my study at the <a href="http://www.dhbw-stuttgart.de/service/english/about-us.html">Baden-Wuerttemberg Cooperative State University Stuttgart</a>. Therefore, the students can use it for their practical reports.</p>
+
+<p>Main features are:</p>
 
 <ul>
-<li>switch to UTF-8</li>
-<li>customisation to comply with the requirements of the referee</li>
-<li>possibility for a glossary with the aid of the script <code>makemyindex</code></li>
-<li>customisation of the <code>natdin.bst</code></li>
-<li>additional template for a self-bended jewel case (InDesign and PDF)</li>
-<li>definition of custom commands for citation with the package <code>nomenclature</code></li>
+<li>UTF-8</li>
+<li>Easy and comprehensive adding of content</li>
+<li>Fully customisable</li>
+<li>Glossary and acronyms with the package <code>glossaries</code></li>
+<li>Bibliography based on a custom <code>author-year</code> style</li>
+<li>Splitting of the bibliography possible (e.g. Literature and Internet Resources)</li>
+<li>German and English version available</li>
+<li>Print and digital version</li>
+<li>…and a lot more!</li>
 </ul>
 
 
-<p>In this template the glossary and list of abbreviations aren't done with the package <code>nomenclature</code> anymore. <del>Instead the package <code>glossaries</code> is used for the glossary and the package <code>acronym</code> is used for the list of abbrevations.</del> Instead of <code>nomenclature</code> the <code>glossaries</code> package is used. Acronyms as well as glossary entries are done that way. Examples are provided in the template. Now they can be used seperately. Therefore the custom commands by Felix and the script <code>makemyindex</code> are removed.</p>
-
-<p>Because I'm studying at the <a href="http://www.dhbw-stuttgart.de/service/english/about-us.html">Baden-Wuerttemberg Cooperative State University Stuttgart</a> and the students have to write a thesis every practical term, the template fits the requirements of the uni. The listings are moved to the front again and the titlepage is customised. For the bibliography the package <code>biblatex</code> is now used. The bibliography style is <code>authoryear-ibid</code> and as backend <code>biber</code> is used instead of <code>bibtex</code>. I also customized the labels in the bibliography such that they are bold. You can easily define the heading of the bibliography in the meta definitions.</p>
-
 <h3>Notes</h3>
 
-<p>Use the bibliography management with great benefits!</p>
+<p>Use the bibliography management with great benefits!
+Their is also a template for a jewel-case for CDs.</p>
 
 <p>The original templates of Stefan and Felix (in version 1.2 from the 21/05/2013) can be found in the <code>Resources</code> folder.</p>
 

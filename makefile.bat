@@ -1,56 +1,46 @@
-:: Called from Notepad++ Run
-:: [path_to_bat_file] "$(CURRENT_DIRECTORY)" "$(NAME_PART)"
-
-:: Change Drive and  to File Directory
-%~d1
-cd %1
+:: Setzen des Variablennamens
+@echo off sett DOCUMENT_NAME=Arbeit
 
 taskkill /IM Acrobat.exe  
-pdflatex %2.tex
-biber %2
-makeglossaries -q %2
-pdflatex %2.tex
-pdflatex %2.tex
-::makeindex.exe %2.nlo -s nomencl.ist -o %2.nls
-::pdflatex %2.tex
-START "" %2.pdf
+
+pdflatex -interaction=errorstopmode %DOCUMENT_NAME%.tex
+makeglossaries %DOCUMENT_NAME%
+pdflatex -interaction=errorstopmode %DOCUMENT_NAME%.tex
+biber %DOCUMENT_NAME%
+pdflatex -interaction=errorstopmode %DOCUMENT_NAME%.tex
+pdflatex -interaction=errorstopmode %DOCUMENT_NAME%.tex
+
+START "" %DOCUMENT_NAME%.pdf
 
 :: Run Cleanup
 call:cleanup
 
 :cleanup
-del %2.bbl
-del %2-blx.bib
-del %2.bib.blg
-del %2.blg
-del %2.brf
-del %2.out
-del %2.idx
-del %2.lof
-del %2.lol
-del %2.lot
-del %2.synctex.gz
-del %2.toc
-del %2.glo
-del %2.tdo
-del %2.ist
-del %2.run.xml
-del %2.acn
-del %2.acr
-del %2.alg
-del %2.glg
-del %2.gls
-del %2.bcf
-del %2.xdy
+del %DOCUMENT_NAME%.bbl
+del %DOCUMENT_NAME%-blx.bib
+del %DOCUMENT_NAME%.bib.blg
+del %DOCUMENT_NAME%.blg
+del %DOCUMENT_NAME%.brf
+del %DOCUMENT_NAME%.out
+del %DOCUMENT_NAME%.idx
+del %DOCUMENT_NAME%.lof
+del %DOCUMENT_NAME%.lol
+del %DOCUMENT_NAME%.lot
+del %DOCUMENT_NAME%.synctex.gz
+del %DOCUMENT_NAME%.toc
+del %DOCUMENT_NAME%.glo
+del %DOCUMENT_NAME%.tdo
+del %DOCUMENT_NAME%.ist
+del %DOCUMENT_NAME%.run.xml
+del %DOCUMENT_NAME%.acn
+del %DOCUMENT_NAME%.acr
+del %DOCUMENT_NAME%.alg
+del %DOCUMENT_NAME%.glg
+del %DOCUMENT_NAME%.gls
+del %DOCUMENT_NAME%.bcf
+del %DOCUMENT_NAME%.xdy
+del %DOCUMENT_NAME%.tps
 
 del *.aux
-del Content\*.aux
-del Content\Comparison\*.aux
-del Content\Conclusion\*.aux
-del Content\Context\*.aux
-del Content\Development\*.aux
-del Content\Introduction\*.aux
-del Content\Reviewing\*.aux
-del Content\TechnicalBackground\*.aux
-del Content\WorkflowAndBPM\*.aux
+del Inhalt\*.aux
 goto:eof

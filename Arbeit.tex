@@ -14,8 +14,8 @@
 % erweitert und angepasst von Moritz Rupp
 % moritz.rupp@gmail.com
 %
-% Version 1.0.2
-% Datum: 12.07.2013
+% Version 2.0
+% Datum: 04.10.2013
 
 
 % Dokumentenkopf ---------------------------------------------------------------------------------------
@@ -59,7 +59,6 @@
 
 % Erstellung eines Index und Abkürzungsverzeichnisses/Glossars aktivieren ------------------------------
 \makeindex{}
-%\makenomenclature{}
 
 
 % Kopf- und Fußzeilen, Seitenränder etc. ---------------------------------------------------------------
@@ -78,8 +77,11 @@
 %   Das Literaturverzeichnis wird aus der BibTeX-Datenbank "Bibliographie.bib"
 %   erstellt.
 % ------------------------------------------------------------------------------------------------------
-\bibliography{Bibliographie} % Aufruf: biblatex Bibliographie
-\defbibheading{literaturverzeichnis}{\chapter*{\bibliographyheading}}
+\bibliography{Bibliographie} % Aufruf: biber Bibliographie
+
+% Um verschiede Unterkapitel im Literaturverzeichnis zu erstellen, wird der Befehl defbibheading verwendet
+\defbibheading{internet}{\section*{Internet und Intranet Quellen}}
+\defbibheading{literatur}{\section*{Fachliteratur}}
 
 
 % Glossar --------------------------------------------------------------------------------
@@ -87,7 +89,7 @@
 \loadglsentries{Inhalt/Glossar.tex}
 
 % Hinzufügen der nicht benutzten Glossareinträge (falls noch eine Abkürzung vorhanden ist und nur diese verwendet wird)
-%\glsadd{beispiel}
+%\glsadd{Beispiel}
 
 
 % Das eigentliche Dokument -----------------------------------------------------------------------------
@@ -107,21 +109,21 @@
 \ofoot{}
 \include{Deckblatt}
 
+% Selbständigkeitserklärung ----------------------------------------------------------------------------
+\include{Erklaerung}
+
 % Sperrvermerk ----------------------------------------------------------------------------
 \include{Sperrvermerk}
 
-% Selbständigkeitserklärung ----------------------------------------------------------------------------
-\include{Erklaerung}
 
 %  Abstract ------------------------------------------------------------------------------------------
 \include{Inhalt/Abstract}
 
 % Liste mit Todos -------------------------------------------------------------------------------------
-\phantomsection
-\markboth{Zu erledigende Punkte}{Liste der noch zu erledigenden Punkte}
-\listoftodos
-\newpage
-
+%\phantomsection
+%\markboth{Liste der noch zu erledigenden Punkte}{Liste der noch zu erledigenden Punkte}
+%\listoftodos
+%\newpage
 
 
 % Seitennummerierung -----------------------------------------------------------------------------------
@@ -141,16 +143,17 @@
 % Anzeigen des Abkürzungsverzeichnisses und des Glossars -------------------------------------
 %%
 
-% Abkürzungsverzeichnis anzeigen
+% Glossar
 \newpage
-\markboth{Abkürzungsverzeichnis}{Abkürzungsverzeichnis}
-\printglossary[style=listdotted, type=\acronymtype, title={Abkürzungsverzeichnis}, toctitle={Abkürzungsverzeichnis}]
-\label{cha:Abkuerzungsverzeichnis}
-
-% print glossary
-\newpage
+\renewcommand{\glsnamefont}[1]{\makefirstuc{#1}} % Druckt dern ersten Buchstaben jeden Eintrages groß
 \printglossary[style=altlist,type=main]
 \label{cha:Glossar}
+
+% Abkürzungen
+\newpage
+\markboth{Abkürzungsverzeichnis}{Abkürzungsverzeichnis}
+\printglossary[style=listdotted, type=\acronymtype, title={Abkürzungsverzeichnis}]
+\label{cha:Abkuerzungsverzeichnis}
 
 
 % Restliche Verzeichnisse ------------------------------------------------------------------------------
@@ -175,22 +178,16 @@
 
 % Literaturverzeichnis anzeigen
 \phantomsection
-\addcontentsline{toc}{chapter}{\bibliographyheading}
+\markboth{Literaturverzeichnis}{Literaturverzeichnis}
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\chapter*{Literaturverzeichnis}
 
-\setlength\bibitemsep{2\itemsep} % Abstand zwischen einträgen verdoppeln
-\setlength{\bibhang}{0.2cm}
-
-% Fette Literaturverzeichnis einträge
-\xpretobibmacro{author}{\mkbibbold\bgroup}{}{}
-\xapptobibmacro{author}{\egroup}{}{}
-\xpretobibmacro{bbx:editor}{\mkbibbold\bgroup}{}{}
-\xapptobibmacro{bbx:editor}{\egroup}{}{}
-
-\renewcommand*{\labelnamepunct}{\mkbibbold{\addcolon\space}} 
-
-\markboth{\bibliographyheading}{\bibliographyheading}
-
-\printbibliography[heading=literaturverzeichnis]
+\printbibliography[notkeyword=Online, heading=literatur] % Alle keywords aufzählen, die nicht gedruckt werden sollen
+\begingroup
+	\raggedright
+	\sloppy
+	\printbibliography[keyword=Online, heading=internet] % Keywords aufzählen, die hier gedruckt werden sollen
+\endgroup
 
 
 % Index ------------------------------------------------------------------------------------------------

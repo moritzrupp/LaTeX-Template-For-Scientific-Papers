@@ -24,25 +24,13 @@
 \newcommand{\itemd}[2]{\item{\textbf{#1}}\\{#2}}
 
 
-% einige Befehle zum Zitieren ---------------------------------------------------------------------------
-\newcommand{\Zitat}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\citep*{#2}}{\citep*[#1]{#2}}}
-\newcommand{\ZitatSpezialA}[3]{\citep*[#1][#2]{#3}}
-\newcommand{\ZitatSpezialB}[2]{\citep*[#1][]{#2}}
-
-
 % zum Ausgeben von Autoren
 \newcommand{\AutorName}[1]{\textsc{#1}}
 \newcommand{\Autor}[1]{\AutorName{\citeauthor{#1}}}
 
 
 % verschiedene Befehle um Wörter semantisch auszuzeichnen -----------------------------------------------
-\newcommand{\NeuerBegriff}[1]{\textbf{#1}}
-
-%\newcommand{\Fachbegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textit{#2}\xspace}{\textit{#2}\xspace\footnote{#1}\nomenclature{#2}{#1}}}
-
-%\newcommand{\FachbegriffSpezialA}[4]{\textit{#4}\footnote{#3}\label{fn:#1}\nomenclature{#4}{#2. Siehe auch Fu{\ss}zeile auf Seite~\pageref{fn:#1}.}}
-
-%\newcommand{\FachbegriffSpezialB}[5]{\textit{#5}\footnote{#3}\label{fn:#1}\nomenclature{#4}{#2. Siehe auch Fu{\ss}zeile auf Seite~\pageref{fn:#1}.}}
+\newcommand{\NeuerBegriff}[1]{\textit{#1}}
 
 
 % Beträge mit Währung -----------------------------------------------------------------------------------
@@ -53,10 +41,6 @@
 \newcommand{\Eingabe}[1]{\texttt{#1}}
 \newcommand{\Code}[1]{\texttt{#1}}
 \newcommand{\Datei}[1]{\texttt{#1}}
-
-\newcommand{\Datentyp}[1]{\textsf{#1}}
-\newcommand{\XMLElement}[1]{\textsf{#1}}
-\newcommand{\Webservice}[1]{\textsf{#1}}
 
 
 % Beschriftung von Tabellen und Bildern ändern ----------------------------------------------------------

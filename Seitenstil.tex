@@ -21,16 +21,15 @@
 
 
 % Kopfzeile für einseitiges Dokument:
-\ihead{%\small{\textsc{\titel}	\\
-	%\untertitel
-	%\\[2ex]
-	\textit{\headmark}%}
+\ihead{
+	\textit{\headmark}
 }
 \chead{}
 \rohead{\includegraphics[scale=0.06]{\logo}}
 \setlength{\headheight}{21mm} % Höhe der Kopfzeile
+
 % Kopfzeile über den Text hinaus verbreitern
-\setheadwidth[0pt]{textwithmarginpar} 
+%\setheadwidth[0pt]{textwithmarginpar} 
 \setheadsepline[text]{0.4pt} % Trennlinie unter Kopfzeile
 
 
@@ -44,8 +43,8 @@
 
 
 % Fußzeile
-%\ifoot{\copyright\ \autor}
-\cfoot{}
+%\cfoot{-- ENTWURF -- \\[4ex]} % Einkommentieren, während des Entwurfstatus
+\cfoot{} % Auskommentieren, während des Entwurfstatus
 \ofoot{\pagemark \\[4ex]}
 
 
@@ -65,3 +64,16 @@
 % Fußnoten fortlaufend durchnummerieren
 \counterwithout{footnote}{chapter}
 
+% Mehr Platz zwischen den Zellen von Tabellen (Wert lässt sich anpassen)
+\renewcommand{\arraystretch}{\TableCellPadding}
+
+% Seitenstil für die Bibliographie
+\setlength\bibitemsep{2\itemsep} % Abstand zwischen den Einträgen
+\setlength{\bibhang}{0.2cm}
+
+% Fette Bibliographieeinträge
+\xpretobibmacro{author}{\mkbibbold\bgroup}{}{}
+\xapptobibmacro{author}{\egroup}{}{}
+\xpretobibmacro{bbx:editor}{\mkbibbold\bgroup}{}{}
+\xapptobibmacro{bbx:editor}{\egroup}{}{}
+\renewcommand*{\labelnamepunct}{\mkbibbold{\addcolon\space}}

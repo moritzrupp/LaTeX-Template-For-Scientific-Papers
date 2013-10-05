@@ -27,4 +27,9 @@
 *-blx.bib
 *.bak
 *.xdy
+*.acn
+*.acr
+*.alg
+*.bcf
+*.tps
 .DS_Store
