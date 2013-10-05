@@ -2,6 +2,8 @@
 #LaTeX Template For Scientific Papers
 *Version 2.0, 04/10/2013*
 
+Please use the branch german respectively english for a checkout / Bitte verwenden den Branch german bzw. english für einen Checkout
+
 **German version follows.**
 
 ---
