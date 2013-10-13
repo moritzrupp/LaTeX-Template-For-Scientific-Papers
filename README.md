@@ -7,16 +7,16 @@ Please use the branch german respectively english for a checkout / Bitte verwend
 
 ---
 
-*Diese Vorlage basiert auf einer Vorlage von [Stefan Macke](http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/), erstmalig erweitert von [Felix Rupp](https://github.com/felixrupp/LaTeX-Vorlage-Wissenschaftliche-Arbeit). Vielen Dank für grandiose Arbeit!*
+*Diese Vorlage basiert auf einer Vorlage von [Stefan Macke](http://blog.stefan-macke.com/2009/04/24/latex-vorlage-fuer-meine-masterarbeit-an-der-ohm-hochschule-nuernberg/), erstmalig erweitert von [Felix Rupp](https://github.com/felixrupp/LaTeX-Vorlage-Wissenschaftliche-Arbeit). Vielen Dank für die grandiose Arbeit!*
 
-Diese LaTeX Vorlage ist für generelle wissenschaftliche Arbeit (speziell Theses, Praxisberichte, Diplomarbeiten, etc.).
+Diese LaTeX Vorlage ist für generelle wissenschaftliche Arbeiten (speziell Theses, Praxisberichte, Diplomarbeiten, etc.).
 
 Die Vorlage wurde im Rahmen meines Studiums and der [Dualen Hochschule Baden-Württemberg Stuttgart](http://www.dhbw-stuttgart.de/home.html) geforked und weiterentwickelt. Daher ist sie besonders für Studierende der DHBW geeignet, um Ihre Praxisberichte/Studienarbeiten zu verfassen.
 
 Hauptmerkmale sind:
 
 * UTF-8
-* Inhalt leicht und verständlich hinzufügen
+* Inhalt kann leicht und verständlich hinzu gefügt werden
 * Vollständig anpassbar
 * Glossar und Abkürzungsverzeichnis mit dem Paket `glossaries`
 * Literaturverzeichnis basierend auf einem angepassten `author-year` Stil
