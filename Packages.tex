@@ -57,7 +57,7 @@
 
 % Floating figures ---------------------------------------------------------
 \usepackage[vflt]{floatflt}
-\usepackage{subfigure}
+\usepackage{subfig}
 \usepackage{tocbasic}
 
 % Inclusion of program code -----------------------------------------------
@@ -205,6 +205,9 @@
 % defines commands for \todo and \listoftodos --------------------------------
 \usepackage[english]{todonotes}
 
+% Enables strikethrough for text
+\usepackage{ulem}
+
 
 % used for the end of macros without parameter
 \usepackage{xspace}
@@ -221,3 +224,9 @@
 
 % This is used for the dummy text
 \usepackage{blindtext}
+
+%% Uncomment this, if you want to let chapters start at the current position and not on a new page. ------------------------------------------------------
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+%\makeatother
