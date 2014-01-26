@@ -60,7 +60,7 @@
 
 % zum Umfließen von Bildern ---------------------------------------------------------
 \usepackage[vflt]{floatflt}
-\usepackage{subfigure}
+\usepackage{subfig}
 \usepackage{tocbasic}
 
 % zum Einbinden von Programmcode -----------------------------------------------
@@ -209,6 +209,8 @@
 % definiert u.a. die Befehle \todo und \listoftodos --------------------------------
 \usepackage[ngerman]{todonotes}
 
+% Durchstreichen von Textstellen
+\usepackage{ulem}
 
 % sorgt dafür, dass Leerzeichen hinter parameterlosen Makros nicht als Makroendezeichen interpretiert werden
 \usepackage{xspace}
@@ -225,3 +227,9 @@
 
 % Blindtext im Inhaltsbereich
 \usepackage{blindtext}
+
+%% Kapitelanfang nicht auf neuer Seite ----------------------------------------
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+%\makeatother

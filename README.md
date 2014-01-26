@@ -1,7 +1,7 @@
 #LaTeX Template For Scientific Papers
-*Version 2.0, 04.10.2013*
+*Version 2.0.1, 26.01.2014*
 
-Please use the branch german respectively english for a checkout / Bitte verwenden den Branch german bzw. english für einen Checkout
+Please use the branch german respectively english for a checkout / Bitte verwende den Branch german bzw. english für einen Checkout
 
 **English version follows.**
 
@@ -59,7 +59,7 @@ Main features are:
 ###Notes
 
 Use the bibliography management with great benefits!
-Their is also a template for a jewel-case for CDs.
+There is also a template for a jewel-case for CDs.
 
 The original templates of Stefan and Felix (in version 1.2 from the 21/05/2013) can be found in the `Resources` folder.
 
