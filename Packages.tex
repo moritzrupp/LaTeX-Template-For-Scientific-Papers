@@ -71,6 +71,7 @@
 
 \lstset{
     float=htbp,
+		captionpos=b,
     basicstyle=\ttfamily\color{black}\small\smaller,
     identifierstyle=,%\color{colIdentifier},
     keywordstyle=\color{colKeys}\bfseries,
@@ -113,7 +114,7 @@
 	citestyle=my-authoryear-ibid,
 	bibstyle=authoryear,
 	backend=biber,
-	babel=hyphen,
+	autolang=hyphen,
 	urldate=comp,
 	dateabbrev=false,
 	maxcitenames=1
@@ -176,8 +177,7 @@
 
 % nicer tables --------------------------------------------------------------------
 \usepackage{tabularx}
-\usepackage{multirow}
-
+\usepackage{booktabs}
 
 % for long tables ---------------------------------------------------------------------
 \usepackage{longtable}
@@ -224,6 +224,9 @@
 
 % This is used for the dummy text
 \usepackage{blindtext}
+
+% For the appendix
+\usepackage{appendix}
 
 %% Uncomment this, if you want to let chapters start at the current position and not on a new page. ------------------------------------------------------
 %\usepackage{etoolbox}

@@ -15,8 +15,8 @@
 % moritz.rupp@gmail.com
 % http://www.moritzrupp.de
 %
-% Version 2.0.1
-% Date: 26/01/2014
+% Version 2.0.2
+% Date: 27/05/2014
 
 
 % Document head ---------------------------------------------------------------------------------------
@@ -197,14 +197,31 @@
 % The conents of the appendix are included like the chapters.
 % See file "Appendix.tex"
 % ------------------------------------------------------------------------------------------------------
-\begin{appendix}
-    \clearpage{}
-    \pagenumbering{roman}
-    \chapter{Appendix}
-    \label{sec:Appendix}
-    % Margin of the enumerations in the table
-    \setdefaultleftmargin{1em}{}{}{}{}{}
-    \input{Appendix}
-\end{appendix}
+\appendix
+
+\makeatletter
+\renewcommand{\@chap@pppage}{%
+	\clear@ppage
+	\thispagestyle{scrheadings}%
+	\if@twocolumn\onecolumn\@tempswatrue\else\@tempswafalse\fi
+	\null\vfil
+	\markboth{Appendices}{Appendices}%
+	{\centering
+		\interlinepenalty \@M
+		\normalfont
+		\Huge \bfseries \appendixpagename\par}%
+	\if@dotoc@pp
+		\addappheadtotoc
+	\fi
+}
+\makeatother
+
+\clearpage{}
+\addappheadtotoc
+\appendixpage
+
+\pagenumbering{roman}
+
+\input{Appendix}
 
 \end{document}
