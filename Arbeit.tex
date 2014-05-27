@@ -15,8 +15,8 @@
 % moritz.rupp@gmail.com
 % http://www.moritzrupp.de
 %
-% Version 2.0.1
-% Datum: 26.01.2014
+% Version 2.0.2
+% Datum: 27.05.2014
 
 
 % Dokumentenkopf ---------------------------------------------------------------------------------------
@@ -201,14 +201,31 @@
 %   Die Inhalte des Anhangs werden analog zu den Kapiteln inkludiert.
 %   Dies geschieht in der Datei "Anhang.tex".
 % ------------------------------------------------------------------------------------------------------
-\begin{appendix}
-    \clearpage{}
-    \pagenumbering{roman}
-    \chapter{Anhang}
-    \label{sec:Anhang}
-    % Rand der Aufzählungen in Tabellen anpassen
-    \setdefaultleftmargin{1em}{}{}{}{}{}
-    \input{Anhang}
-\end{appendix}
+\appendix
+
+\makeatletter
+\renewcommand{\@chap@pppage}{%
+	\clear@ppage
+	\thispagestyle{scrheadings}%
+	\if@twocolumn\onecolumn\@tempswatrue\else\@tempswafalse\fi
+	\null\vfil
+	\markboth{Appendices}{Appendices}%
+	{\centering
+		\interlinepenalty \@M
+		\normalfont
+		\Huge \bfseries \appendixpagename\par}%
+	\if@dotoc@pp
+		\addappheadtotoc
+	\fi
+}
+\makeatother
+
+\clearpage{}
+\addappheadtotoc
+\appendixpage
+
+\pagenumbering{roman}
+
+\input{Anhang}
 
 \end{document}

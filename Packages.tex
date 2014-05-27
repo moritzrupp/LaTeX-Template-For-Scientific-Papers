@@ -74,6 +74,7 @@
 
 \lstset{
     float=htbp,
+		captionpos=b,
     basicstyle=\ttfamily\color{black}\small\smaller,
     identifierstyle=,%\color{colIdentifier},
     keywordstyle=\color{colKeys}\bfseries,
@@ -117,7 +118,7 @@
 	citestyle=my-authoryear-ibid,
 	bibstyle=authoryear,
 	backend=biber,
-	babel=hyphen,
+	autolang=hyphen,
 	urldate=comp,
 	dateabbrev=false,
 	maxcitenames=1
@@ -180,7 +181,7 @@
 
 % schönere Tabellen --------------------------------------------------------------------
 \usepackage{tabularx}
-\usepackage{multirow}
+\usepackage{booktabs}
 
 
 % für lange Tabellen ---------------------------------------------------------------------
@@ -227,6 +228,9 @@
 
 % Blindtext im Inhaltsbereich
 \usepackage{blindtext}
+
+% Appendix
+\usepackage{appendix}
 
 %% Kapitelanfang nicht auf neuer Seite ----------------------------------------
 %\usepackage{etoolbox}

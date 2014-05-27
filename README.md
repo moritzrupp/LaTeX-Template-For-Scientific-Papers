@@ -1,5 +1,5 @@
 #LaTeX Template For Scientific Papers
-*Version 2.0.1, 26.01.2014*
+*Version 2.0.2, 27.05.2014*
 
 Please use the branch german respectively english for a checkout / Bitte verwende den Branch german bzw. english für einen Checkout
 
