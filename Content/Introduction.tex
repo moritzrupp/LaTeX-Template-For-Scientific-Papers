@@ -4,24 +4,111 @@
 \chapter{Introduction}
 \label{cha:Introduction}
 
+This is a simple introduction to the template. It shows several functions supported by the template like a glossary, acronyms, citing, referencing, tables and figures (see~\autoref{sec:TablesFigures}), lists, listings, etc.
 
-\section{Example of Glossary}
+\section{Example of the Glossary}
 \label{sec:ExGlossary}
 
-\gls{Glossaryentry} is an example glossary entry, while \gls{AGPL} is an acronym.
+This work is published under the \gls{CC-SA} license. So, feel free to use it for your thesis and adapt it to your needs. Because of the \ac{CC} license your allowed to do so. But first of all you should learn {\LaTeX}. Some people think its difficult to learn, because there is no \ac{WYSIWYG} editor.
 
-\blindtext[5] \autocite{Testautor2002}
 
-\section{Dummy}
-\label{sec:Dummy}
+\section{Citing}
+\label{sec:Citing}
 
-\blindtext[2] \autocite{Author2013}
+This template uses the Harvard citing style \enquote{author-year}. But it's to change, e.g. if you don't like in line citing with parentheses just start using footnotes. Here is an example; a wise quote by \textcite{Asimov1997}:
+
+\begin{quote}
+\enquote{Knowledge is indivisible. When people grow wise in one direction, they are sure to make it easier for themselves to grow wise in other directions as well. On the other hand, when they split up knowledge, concentrate on their own field, and scorn and ignore other fields, they grow less wise \textemdash\ even in their own field.}
+\end{quote}
+
+As you have guessed, this template doesn't use the default {\LaTeX} fonts. In order to do so, the package \emph{fontspec} is included. With \emph{fontspec} the user is able to load OpenType fonts in a {\LaTeX} document \autocite[cf.][3]{Robertson2013}.
+
+\section{Tables and Figures}
+\label{sec:TablesFigures}
+
+This section has examples of tables (see~\autoref{tab:SampleTable}) and figures (see~\autoref{fig:PlaceHolder}.
+
+\begin{figure}%
+\missingfigure{This is a place holder for a figure.}%
+\caption{A nice and easy to use place holder.}%
+\label{fig:PlaceHolder}%
+\end{figure}
+
+\begin{center}
+\begin{longtable}{c|c|c|c|c}
+\caption{A sample table with performance data.}
+\label{tab:SampleTable} \\
+
+\textbf{\#}	&	\textbf{C} {[}sec{]}	&	\textbf{Java} {[}sec{]}	&	\textbf{Java - C} {[}sec{]}	&	\%	\\
+\toprule[1.5pt]
+\endfirsthead
+
+\multicolumn{5}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+\textbf{\#}	&	\textbf{C} {[}sec{]}	&	\textbf{Java} {[}sec{]}	&	\textbf{Java - C} {[}sec{]}	&	\%	\\
+\toprule[1.5pt]
+\endhead
+			
+\multicolumn{5}{r}{\footnotesize \textit{Continued on next page}} \\
+\endfoot
+\endlastfoot
+
+1	&	2.47	&	3.336932371	&	0.866932371	&	35.09847656	\\
+2	&	2.49	&	3.28858181	&	0.79858181	&	32.07155863	\\
+3	&	2.48	&	3.29198301	&	0.81198301	&	32.7412504	\\
+4	&	2.49	&	3.286295345	&	0.796295345	&	31.97973273	\\
+5	&	2.49	&	3.288482704	&	0.798482704	&	32.06757847	\\
+6	&	2.48	&	3.290081162	&	0.810081162	&	32.66456298	\\
+7	&	2.48	&	3.285896621	&	0.805896621	&	32.49583149	\\
+8	&	2.49	&	3.289358723	&	0.799358723	&	32.10275996	\\
+9	&	2.48	&	3.288659403	&	0.808659403	&	32.60723399	\\
+10	&	2.49	&	3.335017952	&	0.845017952	&	33.93646394	\\
+11	&	2.48	&	3.287597187	&	0.807597187	&	32.5644027	\\
+12	&	2.49	&	3.293863277	&	0.803863277	&	32.28366574	\\
+13	&	2.48	&	3.291244927	&	0.811244927	&	32.71148899	\\
+14	&	2.48	&	3.286065776	&	0.806065776	&	32.50265226	\\
+15	&	2.49	&	3.288609327	&	0.798609327	&	32.07266373	\\
+16	&	2.49	&	3.288866762	&	0.798866762	&	32.08300249	\\
+17	&	2.48	&	3.292376565	&	0.812376565	&	32.75711956	\\
+18	&	2.49	&	3.290268407	&	0.800268407	&	32.13929345	\\
+19	&	2.48	&	3.289624469	&	0.809624469	&	32.64614794	\\
+20	&	2.48	&	3.288649694	&	0.808649694	&	32.6068425	\\
+21	&	2.49	&	3.293171429	&	0.803171429	&	32.25588068	\\
+22	&	2.48	&	3.291608451	&	0.811608451	&	32.72614722	\\
+23	&	2.48	&	3.282929763	&	0.802929763	&	32.37620012	\\
+24	&	2.49	&	3.293829963	&	0.803829963	&	32.28232783	\\
+25	&	2.48	&	3.285785784	&	0.805785784	&	32.49136226	\\
+\multicolumn{5}{c}{\ldots} \\
+\bottomrule[2pt]
+AVG:	&	2.4838	&	3.290900608	&	0.807100608	&	32.49540061	\\
+STD	&	0.005674864	&	0.009707116	&	0.011960919	&	0.530352252	\\
+
+\end{longtable}
+\end{center}
 
 \section{Lists}
 \label{sec:Lists}
 
-\blindtext
+Lists look like this:
 
 \blinditemize[5]
 
-\blindtext[2]
+\section{Listings}
+\label{sec:Listings}
+
+This is how a listing in Java looks like:
+
+\begin{lstlisting}[language=Java, caption={A simple Java listing.}, label={lst:Java}]
+package de.moritzrupp.example
+
+public class Main {
+	
+	public static void main(String[] args) {
+	
+		System.out.print("Arguments: ");
+		for(String arg : args) {
+			System.out.print(arg + " ");
+		}
+		System.out.print("\n");
+	}
+}
+\end{lstlisting}
