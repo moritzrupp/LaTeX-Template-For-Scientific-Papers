@@ -19,7 +19,7 @@
        {\ifthenelse{\ifnameundef{labelname}\OR\iffieldundef{labelyear}}
 	  {\usebibmacro{cite:label}%
            \setunit{\addspace}}
-	  {\printnames{labelname}%
+	  {\textsc{\printnames{labelname}}%
            \setunit{\nameyeardelim}}%
 	\usebibmacro{cite:labelyear+extrayear}}}
     {\usebibmacro{cite:shorthand}}}}
@@ -47,7 +47,7 @@
 	  {}%
 	\usebibmacro{cite:labelyear+extrayear}}
        {\usebibmacro{cite:shorthand}}}
-    {\textit{\printnames{labelname}}%
+    {\textsc{\printnames{labelname}}%
      \setunit{%
        \global\booltrue{cbx:parens}%
        \addspace\bibopenparen}%

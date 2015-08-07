@@ -7,7 +7,14 @@
 
 % Margins ------------------------------------------------------------------------------------
 \setlength{\topskip}{\ht\strutbox} % behebt Warnung von geometry
-\geometry{paper=a4paper,left=35mm,right=35mm,top=35mm}
+\geometry{paper=a4paper,left=25mm,right=40mm,top=30mm}
+
+\recalctypearea
+
+% Font: Times New Roman
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\sfdefault}{ptm}
+\renewcommand{\ttdefault}{cmtt}
 
 
 % Head- and footline --------------------------------------------------------------------------
@@ -21,16 +28,14 @@
 
 
 % Headline for onesided documents:
-\ihead{
-	\textit{\headmark}
-}
+\ihead{}
 \chead{}
-\rohead{\includegraphics[scale=0.06]{\logo}}
-\setlength{\headheight}{21mm} % Height of the headline
+\rohead{\pagemark}
+%\setlength{\headheight}{21mm} % Height of the headline
 
 % expand the headline further the text
 %\setheadwidth[0pt]{textwithmarginpar} 
-\setheadsepline[text]{0.4pt} % seperation line beneath the headline
+%\setheadsepline[text]{0.4pt} % seperation line beneath the headline
 
 %% headline for twosided documents:
 %\ihead{\textit{\leftmark}}
@@ -44,7 +49,10 @@
 % Footline
 %\cfoot{-- DRAFT -- \\[4ex]} % uncomment during draft status
 \cfoot{} % comment during draft status
-\ofoot{\pagemark \\[4ex]}
+\ofoot{}
+
+% Remove the paragraph indentation
+\setlength{\parindent}{0pt}
 
 
 % 	miscellaneous settings ---------------------------------------------------
@@ -61,18 +69,145 @@
 \lstset{emph={square}, emphstyle=\color{red}, emph={[2]root,base}, emphstyle={[2]\color{blue}}}
 
 % footnotes are counted continuously
-\counterwithout{footnote}{chapter}
+%\counterwithout{footnote}{chapter}
 
 % more space in tables
 \renewcommand{\arraystretch}{\TableCellPadding}
 
+% Changes to the Citation style
+\renewcommand*{\postnotedelim}{\addcolon\space}
+
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+
+% Slashes instead of 'ands'
+\let\oldmultinamedelim\multinamedelim
+\let\oldfinalnamedelim\finalnamedelim
+\renewcommand*{\multinamedelim}{\slash}
+\renewcommand*{\finalnamedelim}{\slash}
+\AtBeginBibliography{%
+  \renewcommand*{\multinamedelim}{\oldmultinamedelim}%
+  \renewcommand*{\finalnamedelim}{\oldfinalnamedelim}%
+}
+
 % Layout for bibliography
-\setlength\bibitemsep{2\itemsep} % Set the space between bibliography entries
-\setlength{\bibhang}{0.2cm}
+\setlength\bibitemsep{3\itemsep} % Set the space between bibliography entries
+\setlength{\bibhang}{1cm}
+
+% Change 'and' to ';'
+\AtBeginBibliography{%
+  \renewcommand*{\multinamedelim}{;\space}%
+  \renewcommand*{\finalnamedelim}{;\space}%
+}
+
+% Bibliography Layout
+\renewcommand*{\labelnamepunct}{\addcolon\space}
+\renewcommand*{\bibpagespunct}{\addcolon\space}
+
+\DeclareLanguageMapping{british}{custom-english-ordinal-sscript}
+
+\DeclareFieldFormat[book,article,inbook,booklet,manual]{title}{#1}
+\DeclareFieldFormat[inbook]{booktitle}{#1}
+\DeclareFieldFormat{journaltitle}{\mkbibemph{#1}} % italic journal title with comma
+\DeclareFieldFormat[article,inbook]{pages}{#1}
+
+\DeclareFieldFormat{edition}%
+                   {\ifinteger{#1}%
+                    {\mkbibordedition{#1}\addnbthinspace{}edition}%
+                    {#1\isdot}}
+                    
+\DeclareFieldFormat{url}{[\url{#1}}
+\DeclareFieldFormat{urldate}{\addcomma\space\bibstring{urlseen}\space#1]}
+\DeclareFieldFormat{editor}{#1}%\space\bibstring{byeditor}}
+
+\renewbibmacro*{journal+issuetitle}{%
+  \usebibmacro{journal}%
+  \setunit*{\addspace}%
+  \iffieldundef{series}
+    {}
+    {\newunit
+     \printfield{series}%
+     \setunit{\addspace}}%
+    \usebibmacro{volume+year+issue}%
+    \setunit{\addcolon\space}%
+    \usebibmacro{issue}%
+    \newunit}
+
+
+\newbibmacro*{volume+year+issue}{%
+	\printfield{volume}%
+	\iffieldundef{number}%
+		{}%
+		{\setunit*{\adddot}%
+		\printfield{number}%
+		}%
+	\printtext[parens]{%
+  	\iffieldundef{year}%
+  		{}%
+  		{\printfield{year}}%
+  	}%
+  	\printtext{%
+    	\iffieldundef{issue}%
+      	{\usebibmacro{date}}%
+      	{\printfield{issue}%
+       	}}%
+  \newunit}
+
+%% Inbooks
+\DeclareBibliographyDriver{inbook}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/translator+others}%
+  \setunit{\labelnamepunct}\newblock
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{in:}%
+  \usebibmacro{bybookauthor}%
+  \setunit{;\space}\newblock
+  \usebibmacro{byeditor+others}%  
+  \newunit\newblock
+  \usebibmacro{maintitle+booktitle}%
+  \newunit\newblock
+  \printfield{edition}%
+  \newunit
+  \iffieldundef{maintitle}
+    {\printfield{volume}%
+     \printfield{part}}
+    {}%
+  \newunit
+  \printfield{volumes}%
+  \newunit\newblock
+  \usebibmacro{series+number}%
+  \newunit\newblock
+  \printfield{note}%
+  \newunit\newblock
+  \usebibmacro{publisher+location+date}%
+  \newunit\newblock
+  \usebibmacro{chapter+pages}%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{isbn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \usebibmacro{finentry}}
 
 % Bold bibliography entries
-\xpretobibmacro{author}{\mkbibbold\bgroup}{}{}
-\xapptobibmacro{author}{\egroup}{}{}
-\xpretobibmacro{bbx:editor}{\mkbibbold\bgroup}{}{}
-\xapptobibmacro{bbx:editor}{\egroup}{}{}
-\renewcommand*{\labelnamepunct}{\mkbibbold{\addcolon\space}}
+%\xpretobibmacro{author}{\mkbibbold\bgroup}{}{}
+%\xapptobibmacro{author}{\egroup}{}{}
+%\xpretobibmacro{bbx:editor}{\mkbibbold\bgroup}{}{}
+%\xapptobibmacro{bbx:editor}{\egroup}{}{}
+%\renewcommand*{\labelnamepunct}{\mkbibbold{\addcolon\space}}

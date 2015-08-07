@@ -43,12 +43,4 @@ del %DOCUMENT_NAME%.tps
 
 del *.aux
 del Content\*.aux
-del Content\Comparison\*.aux
-del Content\Conclusion\*.aux
-del Content\Context\*.aux
-del Content\Development\*.aux
-del Content\Introduction\*.aux
-del Content\Reviewing\*.aux
-del Content\TechnicalBackground\*.aux
-del Content\WorkflowAndBPM\*.aux
 goto:eof

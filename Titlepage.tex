@@ -1,52 +1,47 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX root =  Paper.tex
 
+\newgeometry{margin=30mm}
+
 \thispagestyle{plain}
 \begin{titlepage}
 
-\changefont{cmss}{bx}{n}
+%\changefont{cmss}{bx}{n}
 
 \begin{center}
+{\bfseries
 
-\LARGE{\textbf{\myTitleTitlepage}}\\
-\Large{\textbf{\mySubtitleTitlepage}}\\[4ex]
+\Large{\uline{\myTitleTitlepage}}\\[16ex]
 
-\Large{\textbf{\kind}}\\[1.5ex]
-
-\changefont{cmss}{m}{n}
-\large{\area{} \\ \study}\\[1ex]
-\large{at the \university{} \place}\\[6ex]
-
-by
-
-\large{\textbf{\myAuthor}} \\[2ex]
-
-October \myYear
-
-\vspace{\fill}
-
-% 2 Logos -------------------
-%\begin{tabular}{p{50mm}cp{50mm}c}
-%	\includegraphics[scale=0.16]{Logo.pdf} & \includegraphics[trim=0mm 100mm 0mm 100mm, scale=0.25]{Logo.pdf}
-%\end{tabular}
-
-% 1 Logo ----------------------
-\includegraphics[width=0.5\textwidth]{Logo.pdf}
-
-\vspace{\fill}
-
-\normalsize{}
-\renewcommand{\arraystretch}{1}
-\begin{tabular}{ll}
-Time needed for completion:  & \quad 12 Weeks\\
-Student ID, Course: & \quad \studentID, \course\\
-Company: & \quad \company, company location\\
-Supervisor:  & \quad \firstreviewer\\
-Second reviewer: & \quad \secondreviewer\\
-Submitted in: & \quad \place, 4th October 2013
-\end{tabular}
-\renewcommand{\arraystretch}{\TableCellPadding}
-
+{\large
+Degree Dissertation\\
+for the\\
+Master Examination in \study\\
+at the\\
+\area\\
+of the \\
+\university\\
+\place
+}}
 \end{center}
 
+\vspace{\fill}
+
+\begin{flushright}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{ll}
+& \quad Examiner:\\
+& \quad \firstreviewer\\
+& \quad \\
+& \quad Submitted by:\\
+& \quad \myAuthor\\
+& \quad Born in \born\\
+& \quad \\
+Date of submission: & \quad \submissionDate
+\end{tabular}
+\renewcommand{\arraystretch}{\TableCellPadding}
+\end{flushright}
+
 \end{titlepage}
+
+\restoregeometry

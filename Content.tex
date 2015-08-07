@@ -5,4 +5,197 @@
 % They have to be in the corresponding .TEX file.
 % If you want you can change the file names.
 
-\include{Content/Introduction}
+
+% Put all your chapter/section related text HERE (just copy paste)
+
+\chapter{Introduction}
+\label{cha:Introduction}
+
+This is a simple introduction to the template. It shows several functions supported by the template like a glossary, acronyms, citing, referencing, tables and figures (see~\cref{sec:TablesFigures}), lists, listings, etc.
+
+\section{Example of the Glossary}
+\label{sec:ExGlossary}
+
+This work is published under the \gls{CC-SA} license. So, feel free to use it for your thesis and adapt it to your needs. Because of the \ac{CC} license your allowed to do so. But first of all you should learn {\LaTeX}. Some people think its difficult to learn, because there is no \ac{WYSIWYG} editor.
+
+
+\section{Citing}
+\label{sec:Citing}
+
+This template uses the Harvard citing style \enquote{author-year}. But it's to change, e.g. if you don't like in line citing with parentheses just start using footnotes. Here is an example; a wise quote by \textcite{Asimov1997}:
+
+\begin{quote}
+\enquote{Knowledge is indivisible. When people grow wise in one direction, they are sure to make it easier for themselves to grow wise in other directions as well. On the other hand, when they split up knowledge, concentrate on their own field, and scorn and ignore other fields, they grow less wise \textemdash\ even in their own field.}
+\end{quote}
+
+As you have guessed, this template doesn't use the default {\LaTeX} fonts. In order to do so, the package \emph{fontspec} is included. With \emph{fontspec} the user is able to load OpenType fonts in a {\LaTeX} document \autocite[see][3]{Robertson2013}. But in this case, \emph{Times New Roman} is chosen which is supported by {\LaTeX}.
+
+\section{Tables and Figures}
+\label{sec:TablesFigures}
+
+This section has examples of tables (see~\cref{tab:SampleTable}) and figures (see~\cref{fig:PlaceHolder}).
+
+\begin{figure}%
+\caption{A nice and easy to use place holder.}%
+\missingfigure{This is a place holder for a figure.}%
+\caption*{Source: The reference is below the figure}
+\label{fig:PlaceHolder}%
+\end{figure}
+
+\begin{center}
+\begin{longtable}{c|c|c|c|c}
+\caption{A sample table with performance data.}
+\label{tab:SampleTable} \\
+
+\textbf{\#}	&	\textbf{C} {[}sec{]}	&	\textbf{Java} {[}sec{]}	&	\textbf{Java - C} {[}sec{]}	&	\%	\\
+\toprule[1.5pt]
+\endfirsthead
+
+\multicolumn{5}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+\textbf{\#}	&	\textbf{C} {[}sec{]}	&	\textbf{Java} {[}sec{]}	&	\textbf{Java - C} {[}sec{]}	&	\%	\\
+\toprule[1.5pt]
+\endhead
+			
+\multicolumn{5}{r}{\footnotesize \textit{Continued on next page}} \\
+\endfoot
+\endlastfoot
+
+1	&	2.47	&	3.336932371	&	0.866932371	&	35.09847656	\\
+2	&	2.49	&	3.28858181	&	0.79858181	&	32.07155863	\\
+3	&	2.48	&	3.29198301	&	0.81198301	&	32.7412504	\\
+4	&	2.49	&	3.286295345	&	0.796295345	&	31.97973273	\\
+5	&	2.49	&	3.288482704	&	0.798482704	&	32.06757847	\\
+6	&	2.48	&	3.290081162	&	0.810081162	&	32.66456298	\\
+7	&	2.48	&	3.285896621	&	0.805896621	&	32.49583149	\\
+8	&	2.49	&	3.289358723	&	0.799358723	&	32.10275996	\\
+9	&	2.48	&	3.288659403	&	0.808659403	&	32.60723399	\\
+10	&	2.49	&	3.335017952	&	0.845017952	&	33.93646394	\\
+11	&	2.48	&	3.287597187	&	0.807597187	&	32.5644027	\\
+12	&	2.49	&	3.293863277	&	0.803863277	&	32.28366574	\\
+13	&	2.48	&	3.291244927	&	0.811244927	&	32.71148899	\\
+14	&	2.48	&	3.286065776	&	0.806065776	&	32.50265226	\\
+15	&	2.49	&	3.288609327	&	0.798609327	&	32.07266373	\\
+16	&	2.49	&	3.288866762	&	0.798866762	&	32.08300249	\\
+17	&	2.48	&	3.292376565	&	0.812376565	&	32.75711956	\\
+18	&	2.49	&	3.290268407	&	0.800268407	&	32.13929345	\\
+19	&	2.48	&	3.289624469	&	0.809624469	&	32.64614794	\\
+20	&	2.48	&	3.288649694	&	0.808649694	&	32.6068425	\\
+21	&	2.49	&	3.293171429	&	0.803171429	&	32.25588068	\\
+22	&	2.48	&	3.291608451	&	0.811608451	&	32.72614722	\\
+23	&	2.48	&	3.282929763	&	0.802929763	&	32.37620012	\\
+24	&	2.49	&	3.293829963	&	0.803829963	&	32.28232783	\\
+25	&	2.48	&	3.285785784	&	0.805785784	&	32.49136226	\\
+\multicolumn{5}{c}{\ldots} \\
+\bottomrule[2pt]
+AVG:	&	2.4838	&	3.290900608	&	0.807100608	&	32.49540061	\\
+STD	&	0.005674864	&	0.009707116	&	0.011960919	&	0.530352252	\\
+\caption*{Source: The source of this table.}
+\end{longtable}
+\end{center}
+
+\section{Lists}
+\label{sec:Lists}
+
+Lists look like this:
+
+\blinditemize[5]
+
+
+\chapter{How To}
+\label{cha:HowTo}
+
+This chapter is a guide on how to use this template. For example, the referencing and citing is explained. Moreover, the usage of figures and tables is elaborated.
+
+\section{Build the document}
+\label{sec:BuildDocument}
+
+In order to build your document, you just have to double-click the file \File{makefile.bat}.
+
+\section{Use of the Glossary}
+\label{sec:UseGlossary}
+
+In order to use the glossary, an entry has to be put in the file \File{Content/Glossary.tex}. \Cref{lst:glossary} shows a sample entry and the command for using it in the text. In the Glossary, a dot is automatically added at the end of each description.\footnote{This is an example of a footnote. Each page starts by 1 (can be changed for continuous numbering.}
+
+\begin{lstlisting}[language={[LaTeX]TeX},label={lst:glossary},caption={The use of the Glossary.}]
+\newglossaryentry{CC-SA}{
+	name={Creative Commons Attribution-ShareAlike 3.0 Unported},
+	description={This \acf*{CC} license allows the user to \emph{share} (copy and redistribute) a work and to \emph{adapt} (remix, transform and build upon) the work for \emph{any} purpose \autocite{creativecommons2014}}
+}
+
+@\ldots@ \gls{CC-SA} is used @\ldots@
+\end{lstlisting}
+
+\section{Use of Abbreviations/Acronyms}
+\label{sec:UseAcronyms}
+
+Acronyms/Abbreviations are also added to the file \File{Content/Glossary.tex}. \Cref{lst:acronyms} shows a sample acronym entry and the usage of it. There are many commands to use acronyms:
+
+\begin{itemize}
+	\item \lstinline[language={[LaTeX]TeX}]!\ac{<label>}! is the default command. First, the whole word is written. Afterwards only the short form is used
+	\item \lstinline[language={[LaTeX]TeX}]!\acl{<label>}! always uses the long form
+	\item \lstinline[language={[LaTeX]TeX}]!\acs{<label>}! is the short form
+	\item \lstinline[language={[LaTeX]TeX}]!\acf{<label>}! writes the full acronym: Longform (shortform)
+	\item Each command can be used with a \lstinline!*!, so that the produced text is not referenced\footnote{Another random footnote without important content.}
+\end{itemize}
+
+\begin{lstlisting}[language={[LaTeX]TeX},label={lst:acronyms},caption={The use of Abbreviations/Acronyms.}]
+\newacronym{CC}{CC}{Creative Commons}
+\newacronym{WYSIWYG}{WYSIWYG}{What You See Is What You Get}
+
+\newacronym{<label>}{Shortform}{Longform}
+\end{lstlisting}
+
+\section{Referencing Commands}
+\label{sec:ReferencingCommands}
+
+Each figure, formulae or table can be accessed by a label for referencing. Therefore, two important commands are available:
+
+\begin{enumerate}
+	\item \lstinline[language={[LaTeX]TeX}]!\Cref{<label>}!
+	\item \lstinline[language={[LaTeX]TeX}]!\cref{<label>}!
+\end{enumerate}
+
+The first capitalizes the first letter of \enquote{Figure}, \enquote{Tables}, etc. \Cref{lst:referencing} shows these two sentences in {\LaTeX} code where \texttt{lst:referencing} is the label of the listing.
+
+\begin{lstlisting}[language={[LaTeX]TeX},label={lst:referencing},caption={How to reference.}]
+The first capitalizes the first letter of \enquote{Figure}, \enquote{Tables}, etc. \Cref{lst:referencing} shows these two sentences in {\LaTeX} code where \texttt{lst:referencing} is the label of the listing.
+\end{lstlisting}
+
+\section{Quoting}
+\label{sec:Quoting}
+
+Quoting using this {\LaTeX} template is highly automated. There are several commands introduced in this section.
+
+\begin{itemize}
+	\item \lstinline[language={[LaTeX]TeX}]!\enquote{Text}!: Puts the text in quotation marks
+	\item \lstinline[language={[LaTeX]TeX}]!\enquoteit{Text}!: Puts the text in quotation marks and italicizes the text (given by the Guidelines)
+	\item \lstinline[language={[LaTeX]TeX}]!\foreignquote{<lang>}{Text}!: Should be used for quotes in foreign language, e.\,g.\,German.
+	\item \lstinline[language={[LaTeX]TeX}]!\foreignquoteit{<lang>}{Text}!: See \lstinline[language={[LaTeX]TeX}]!\enquoteit{Text}!
+	\item \lstinline[language={[LaTeX]TeX}]!\textquote[<cite>][<punct>]{<text>}<tpunct>!: This command can be used for direct quotations. It puts the \texttt{<text>} in quotation marks followed by a reference to the author. For \texttt{<cite>} you use the regular \lstinline[language={[LaTeX]TeX}]!\cite[<e.g. see>][<page>]{<citekey>}! command (in curly braces, not autocite command needed, because parenthesis are added automatically). \texttt{<punct>} is the punctuation after the text. \texttt{<tpunct>} is a punctuation after the whole command
+\end{itemize}
+
+The commands \lstinline[language={[LaTeX]TeX}]!\autocite[<e.g. see>][<page>]{<citekey>}! and \lstinline[language={[LaTeX]TeX}]!\textcite[<e.g. see>][<page>]{<citekey>}! are used for indirect quotes as usual.
+
+\subsection{Examples}
+\label{sec:QuotingExamples}
+
+\begin{itemize}
+	\item \lstinline[language={[LaTeX]TeX}]!\enquote{Text}!: \enquote{This text is in quotation marks}
+	\item \lstinline[language={[LaTeX]TeX}]!\enquoteit{Text}!: \enquoteit{This text is in quotation marks and italicized}
+	\item \lstinline[language={[LaTeX]TeX}]!\foreignquote{<lang>}{Text}!: \foreignquote{ngerman}{Dieser Text ist in Deutsch}
+	\item \lstinline[language={[LaTeX]TeX}]!\foreignquoteit{<lang>}{Text}!: \foreignquoteit{ngerman}{Dieser Text ist in Deutsch und kursiv}
+	\item \lstinline[language={[LaTeX]TeX}]!\textquote[<cite>][<punct>]{<text>}<tpunct>!: \textquote[{\cite[see][3]{Robertson2013}}]{Without fontspec, it is necessary to write cumbersome font definition files for {\LaTeX}, since \LaTeX{'s} font selection scheme (known as the \enquote{\textsc{nfss}} has a lot going on behind the scenes to allow easy commands like \texttt{\bs emph} or \texttt{\bs bfseries}}
+	\item Multiple citations from the same author in a row are shorted: \cite[see][3]{Robertson2013}
+	\item But only if they are on the same page: \cite[see][3]{Robertson2013}
+\end{itemize}
+
+
+\chapter{Some Blindtext}
+\label{cha:SomeBlindtext}
+
+\blindtext
+
+\section{Some Paragraphs}
+\label{sec:SomeParagraphs}
+
+\Blindtext

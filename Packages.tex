@@ -5,17 +5,19 @@
 %   see Layout.tex
 % -----------------------------------------------------------------------------------------
 \usepackage[
-    automark, % automatically create chapter name in the headline
-    headsepline, % seperation line beneath headline
-    ilines % left seperate line
+%    automark, % automatically create chapter name in the headline
+%    headsepline, % seperation line beneath headline
+%    ilines % left seperate line
 ]{scrpage2}
 
 % Hacks in order to prevent warnings
 \usepackage{scrhack}
 
 % Customisation of the language -------------------------------------------------
-\usepackage[british]{babel}
-
+\usepackage[ngerman,british]{babel}
+%\usepackage{polyglossia}
+%\setdefaultlanguage[variant=british]{english}
+%\setotherlanguages{german}
 
 % Special character 
 % -----------------------------------------------------------------------------------------
@@ -23,8 +25,9 @@
 
 
 % Font --------------------------------------------------------------------------------
-\usepackage{lmodern} % better fonts
+%\usepackage{lmodern} % better fonts
 \usepackage{relsize} % font size relatively
+%\usepackage{mathptmx}
 
 
 % Better underlining ---------------------------------------------
@@ -40,7 +43,8 @@
 
 
 % Commands from AMSTeX for mathematical symbols, e.g.  \boldsymbol \mathbb
-\usepackage{amsmath,amsfonts}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 
 
 % Use Euro sign ------------------------------------------------------------
@@ -57,8 +61,11 @@
 
 % Floating figures ---------------------------------------------------------
 \usepackage[vflt]{floatflt}
-\usepackage{subfig}
+\usepackage{caption}
+\usepackage{subcaption}
+
 \usepackage{tocbasic}
+
 
 % Inclusion of program code -----------------------------------------------
 \usepackage{listings}
@@ -71,7 +78,7 @@
 
 \lstset{
     float=htbp,
-		captionpos=b,
+	captionpos=t,
     basicstyle=\ttfamily\color{black}\small\smaller,
     identifierstyle=,%\color{colIdentifier},
     keywordstyle=\color{colKeys}\bfseries,
@@ -88,7 +95,7 @@
     breaklines=true,
     %backgroundcolor=\color{hellgelb},
     breakautoindent=true,
-    escapeinside={(*}{*)},
+    escapeinside={@}{@},
     literate={Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}2 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1 {µ}{\textmu}1
  }
 
@@ -107,20 +114,6 @@
 
 % link URL, break long URL etc. -------------------------------------
 \usepackage{url}
-
-
-% include biblatex -----------------------------------------------------------------------
-\usepackage[
-	citestyle=my-authoryear-ibid,
-	bibstyle=authoryear,
-	backend=biber,
-	autolang=hyphen,
-	urldate=comp,
-	dateabbrev=false,
-	maxcitenames=1
-]{biblatex}
-\usepackage[english=british]{csquotes}
-
 
 % PDF Options -------------------------------------------------------------------------
 \usepackage[
@@ -158,6 +151,19 @@
     pdfsubject={\myTitle \mySubtitle},
     pdfkeywords={\keywords},
 }
+
+% include biblatex -----------------------------------------------------------------------
+\usepackage[
+	citestyle=my-authoryear-ibid,
+	bibstyle=authoryear,
+	backend=biber,
+%	autolang=hyphen,
+	urldate=comp,
+	isbn=false,
+	language=british,
+	dateabbrev=false,
+]{biblatex}
+\usepackage[autostyle=true,english=british]{csquotes}
 
 % For the glossary and abbreviations -------------------------
 \usepackage[
@@ -203,11 +209,7 @@
 
 
 % defines commands for \todo and \listoftodos --------------------------------
-\usepackage[english]{todonotes}
-
-% Enables strikethrough for text
-\usepackage{ulem}
-
+\usepackage[english,obeyDraft]{todonotes}
 
 % used for the end of macros without parameter
 \usepackage{xspace}
@@ -220,13 +222,20 @@
 \usepackage{multirow}
 
 % better hyphenation etc.
-\usepackage{microtype}
+\usepackage[final]{microtype}
 
 % This is used for the dummy text
 \usepackage{blindtext}
 
 % For the appendix
 \usepackage{appendix}
+
+% Auto-capitalization for autorefs
+\usepackage{cleveref}
+\crefname{table}{table}{tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
 
 %% Uncomment this, if you want to let chapters start at the current position and not on a new page. ------------------------------------------------------
 %\usepackage{etoolbox}

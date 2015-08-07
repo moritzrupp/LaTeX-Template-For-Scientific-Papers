@@ -2,6 +2,15 @@
 % !TEX root =  Paper.tex
 % Custom commands
 
+% Quotes in italic
+\newcommand{\enquoteit}[1]{\enquote{\textit{#1}}}
+\newcommand{\foreignquoteit}[2]{\foreignquote{#1}{\textit{#2}}}
+
+\renewcommand{\mktextquote}[6]{%
+  #1%
+ \itshape
+  #2#4#3#6#5%
+}
 
 % simple changing of the font, e.g.: \changefont{cmss}{sbc}{n} ---------------------------------------
 \newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}

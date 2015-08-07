@@ -24,17 +24,18 @@
 % ------------------------------------------------------------------------------------------------------
 \documentclass[
     12pt, % font-size
+    BCOR=10mm,
     DIV10, % Change of the size of the print space, only to be used with koma-script
     UKenglish, % langauge
     a4paper, % paper size
     oneside, % one or twoside
     titlepage, % titlepage is used
-    parskip=half, % Space between paragrpahs (half of a line)
-    headings=normal, % Reduce size of headings
+%    parskip=half, % Space between paragrpahs (half of a line)
+%    headings=normal, % Reduce size of headings
     listof=totoc, % list the listings in the table of contents
     bibliography=totoc, % list the bibliography in the table of contents
     index=totoc, % list the index in the table of contents
-    captions=tableheading, % captions of tables etc. below
+%    captions=tableheading, % captions of tables etc. below
     final % status of the document (final/draft)
 ]{scrreprt}
 
@@ -79,12 +80,13 @@
 \bibliography{Bibliography} % Call: biber Bibliography
 
 % For different sections in the bibliography use the defbibheading command -----------------------------------------------
-\defbibheading{internet}{\section*{Internet and Intranet Resources}}
-\defbibheading{literature}{\section*{Literature}}
+\defbibheading{heading}{\chapter*{\bibliographyheading}}
+%\defbibheading{internet}{\section*{Internet and Intranet Resources}}
+%\defbibheading{literature}{\section*{Literature}}
 
 % Glossary --------------------------------------------------------------------------------
 \makeglossaries
-\loadglsentries{Content/Glossary.tex}
+\loadglsentries{Glossary.tex}
 
 % Add the unused glossary entries (in case you have some you only use as acronyms)
 %\glsadd{sample}
@@ -99,23 +101,23 @@
 
 % give numbers to subsubsections ----------------------------------------------------------------------
 \setcounter{secnumdepth}{3}
-% Depth of the table of contents (don't show subsubsections
+% Depth of the table of contents (don't show subsubsections)
 \setcounter{tocdepth}{2}
 
 
 % Titlepage and abstract wihtout page numbering ---------------------------------------------------------------
-\ofoot{}
+%\ofoot{}
 \include{Titlepage}
 
 % Decleration of Honour ----------------------------------------------------------------------------
-\include{DeclarationOfHonour}
+%\include{DeclarationOfHonour}
 
 % Non-disclosure Note ----------------------------------------------------------------------------
-\include{NonDisclosureNote}
+%\include{NonDisclosureNote}
 
 
 %  Abstract ------------------------------------------------------------------------------------------
-\include{Content/Abstract}
+\include{Abstract}
 
 % List of todos ---------------------------------------------------------------------------------------
 % Uncomment for printing the list of todos.
@@ -128,8 +130,9 @@
 % Page numbering ------------------------------------------------------------------------------------
 %   Capital roman numbers before the main part.
 % ------------------------------------------------------------------------------------------------------
-\ofoot{\pagemark \\[4ex]}
+%\ofoot{\pagemark \\[4ex]}
 \pagenumbering{Roman}
+\setcounter{page}{2}
 
 % Table of contents --------------------------------------------------------------------------------------
 \phantomsection{} % Guarantees the correct inclusion of the section into the table of contents
@@ -156,8 +159,8 @@
 % Remaining listings ----------------------------------------------------------------------------------
 \listoffigures{} % List of figures
 \listoftables{} % List of tables
-\renewcommand{\lstlistlistingname}{List of Listings}
-\lstlistoflistings{} % List of listings
+%\renewcommand{\lstlistlistingname}{List of Listings}
+%\lstlistoflistings{} % List of listings
 
 % arabic page numbering in the main part ------------------------------------------------------------------
 \clearpage{}
@@ -168,23 +171,25 @@
 \input{Content}
 
 
-\clearpage{}
-\pagenumbering{Roman}
-\setcounter{page}{7} %%% This page counter has to edited regarding the number of pages before the main part. If the listings ended with V, you have to set the counter to 6.
+%\clearpage{}
+%\pagenumbering{Roman}
+%\setcounter{page}{7} %%% This page counter has to edited regarding the number of pages before the main part. If the listings ended with V, you have to set the counter to 6.
 
-
+\nocite{*}
 % Print the bibliography
 \phantomsection
-\markboth{Bibliography}{Bibliography}
-\addcontentsline{toc}{chapter}{Bibliography}
-\chapter*{Bibliography}
+\markboth{\bibliographyheading}{\bibliographyheading}
+\addcontentsline{toc}{chapter}{\bibliographyheading}
+\printbibliography[heading=heading]
 
-\printbibliography[notkeyword=Online, heading=literature] % List all the keywords not to be printed
-\begingroup
-	\raggedright
-	\sloppy
-	\printbibliography[keyword=Online, heading=internet] % List the keyword for this bibliography section
-\endgroup
+%\chapter*{\bibliographyheading}
+
+%\printbibliography[notkeyword=Online, heading=literature] % List all the keywords not to be printed
+%\begingroup
+%	\raggedright
+%	\sloppy
+%	\printbibliography[keyword=Online, heading=internet] % List the keyword for this bibliography section
+%\endgroup
 
 
 % Index ------------------------------------------------------------------------------------------------
@@ -197,31 +202,31 @@
 % The conents of the appendix are included like the chapters.
 % See file "Appendix.tex"
 % ------------------------------------------------------------------------------------------------------
-\appendix
+%\appendix
 
-\makeatletter
-\renewcommand{\@chap@pppage}{%
-	\clear@ppage
-	\thispagestyle{scrheadings}%
-	\if@twocolumn\onecolumn\@tempswatrue\else\@tempswafalse\fi
-	\null\vfil
-	\markboth{Appendices}{Appendices}%
-	{\centering
-		\interlinepenalty \@M
-		\normalfont
-		\Huge \bfseries \appendixpagename\par}%
-	\if@dotoc@pp
-		\addappheadtotoc
-	\fi
-}
-\makeatother
+%\makeatletter
+%\renewcommand{\@chap@pppage}{%
+%	\clear@ppage
+%	\thispagestyle{scrheadings}%
+%	\if@twocolumn\onecolumn\@tempswatrue\else\@tempswafalse\fi
+%	\null\vfil
+%	\markboth{Appendices}{Appendices}%
+%	{\centering
+%		\interlinepenalty \@M
+%		\normalfont
+%		\Huge \bfseries \appendixpagename\par}%
+%	\if@dotoc@pp
+%		\addappheadtotoc
+%	\fi
+%}
+%\makeatother
 
-\clearpage{}
-\addappheadtotoc
-\appendixpage
+%\clearpage{}
+%\addappheadtotoc
+%\appendixpage
 
-\pagenumbering{roman}
+%\pagenumbering{roman}
 
-\input{Appendix}
+%\input{Appendix}
 
 \end{document}

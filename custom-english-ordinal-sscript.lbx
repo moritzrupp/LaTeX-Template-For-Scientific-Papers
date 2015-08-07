@@ -1,0 +1,70 @@
+\ProvidesFile{custom-english-ordinal-sscript.lbx}
+
+
+% This file redefines '\mkbibordinal' command, and contains
+% its standard definition (from english.lbx) with the only 
+% difference in one line with '\mkbibsuperscript{...}'
+
+
+\InheritBibliographyExtras{english}
+\DeclareBibliographyExtras{%
+  \protected\def\mkbibordinal#1{%
+    \begingroup%
+    \@tempcnta0#1\relax\number\@tempcnta%
+    \@whilenum\@tempcnta>100\do{\advance\@tempcnta-100\relax}%
+    \ifnum\@tempcnta>20%
+      \@whilenum\@tempcnta>9\do{\advance\@tempcnta-10\relax}%
+    \fi%
+    \mkbibsuperscript{\ifcase\@tempcnta th\or st\or nd\or rd\else th\fi}%
+    \endgroup}%
+  \protected\def\mkbibmascord{\mkbibordinal}%
+  \protected\def\mkbibfemord{\mkbibordinal}%
+  \protected\def\mkbibdatelong#1#2#3{%
+    \iffieldundef{#2}
+      {}
+      {\mkbibmonth{\thefield{#2}}%
+       \iffieldundef{#3}
+         {\iffieldundef{#1}{}{\space}}
+   {\nobreakspace}}%
+    \iffieldundef{#3}
+      {}
+      {\stripzeros{\thefield{#3}}%
+       \iffieldundef{#1}{}{,\space}}%
+     \iffieldbibstring{#1}
+       {\bibstring{\thefield{#1}}}
+       {\stripzeros{\thefield{#1}}}}%
+   \protected\def\mkbibdateshort#1#2#3{%
+    \iffieldundef{#2}
+      {}
+      {\mkdatezeros{\thefield{#2}}%
+       \iffieldundef{#3}
+         {\iffieldundef{#1}{}{/}}
+         {/}}%
+    \iffieldundef{#3}
+      {}
+      {\mkdatezeros{\thefield{#3}}%
+       \iffieldundef{#1}{}{/}}%
+     \iffieldbibstring{#1}
+       {\bibstring{\thefield{#1}}}
+       {\mkdatezeros{\thefield{#1}}}}%
+  \savecommand\mkbibrangecomp
+  \savecommand\mkbibrangecompextra
+  \savecommand\mkbibrangeterse
+  \savecommand\mkbibrangeterseextra
+  \protected\def\mkbibrangecomp{%
+    \lbx@us@mkbibrangetrunc@long{long}}%
+  \protected\def\mkbibrangeterse{%
+    \lbx@us@mkbibrangetrunc@short{short}}%
+  \protected\def\mkbibrangecompextra{%
+    \lbx@us@mkbibrangetruncextra@long{long}}%
+  \protected\def\mkbibrangeterseextra{%
+    \lbx@us@mkbibrangetruncextra@short{short}}%
+}
+
+\InheritBibliographyStrings{english}
+\DeclareBibliographyStrings{%
+  urlseen          = {{found on}{found on}},
+  byeditor         = {{(Editors)}{\mkbibparens{Eds\adddot}}}
+}
+
+\endinput
